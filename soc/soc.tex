@@ -3,6 +3,7 @@
 \usepackage[czech]{babel}
 \usepackage[T1]{fontenc}
 \usepackage{graphicx}
+\usepackage{float}
 \author{Roman Ondráček}
 \title{Dálkové ovládání domácích spotřebičů mobilním telefonem}
 \begin{document}
@@ -74,12 +75,11 @@
 
 Prohlašuji, že svou práci na téma Dálkové ovládání domácích spotřebičů mobilním telefonem jsem vypracoval samostatně pod vedením prof. Ing. Václava Říčného, CSc. a s použitím odborné literatury a dalších informačních zdrojů, které jsou všechny citovány v práci a uvedeny v seznamu literatury na konci práce. \\
 Dále prohlašuji, že tištěná i elektronická verze práce SOČ jsou shodné a nemám závažný důvod proti zpřístupňování této práce v souladu se zákonem č.~121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a změně některých zákonů (autorský zákon) v platném změní. \\[8mm]
-
-V Boskovicích dne \today \hspace{32mm} Podpis: 
+V Boskovicích dne \today \hspace{24mm} Podpis: 
 
 \newpage
 
-~ \vspace{88mm}
+~ \vspace{80mm}
 
 \section*{Poděkování}
 
@@ -102,24 +102,23 @@ Tato práce byla provedena za finanční podpory Jihomoravského kraje.
 
 \section*{Anotace}
 
-Cílem této práce je navrhnout a sestavit chytrou zásuvku, která se ovládá pomocí pomocí SMS.
+Cílem této práce je navrhnout a sestavit chytrou zásuvku, která se ovládá pomocí pomocí SMS a která může spínat odporovou zátěž až 10~A. Součástí mé práce je technická dokumentace výrobku, popis postupu  výroby a samotný výrobek.
 
 \subsection*{Klíčová slova}
 
-GSM; SMS;
+GSM; SMS; IQRF; relé
 
 \section*{Annotation}
 
-The goal of this work is to design and build an smart power socket, which is controlled  by a  text message.
+The goal of this work is to design and build an smart power socket, which is controlled  by a  text message and it can switch resistive loads up to a current 10~A. My work includes a technical documentation, description of a manufacturing process and the product itself.
 
 \subsection*{Keywords}
 
-GSM; text message; 
+GSM; text message; IQRF; relay
 
 \newpage
 
 \tableofcontents
-
 
 \newpage
 
@@ -127,21 +126,142 @@ GSM; text message;
 
 \addcontentsline{toc}{section}{Úvod}
 
-Text
+Minimálně již jeden rok se intenzivně mluví o Internetu věcí a domácí automatizaci. Na trhu jsou nabízeny chytré zásuvky, které bohužel nenabízejí možnost pohodlně a bezpečně je ovládat vzdáleně pomocí mobilního telefonu.
+
+Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na frekvenci 2,4~GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože tato frekvence se používá pro přenos dat přes WiFi nebo Bluetooth\cite{ism-band}. A většinou tyto chytré zásuvky lze pouze ovládat pouze v místní síti (LAN).
 
 \newpage
 
-\section{Technické řešení}
+\section{Technické parametry}
 
-\subsection{Blokové schéma}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		\textbf{Parametr} & \textbf{Hodnota} \\ 
+		\hline 
+		\hline 
+		\textbf{Pracovní napětí} & 90~V až 250~V AC \\ 
+		\hline 
+		\textbf{Maximální spínaný proud} & 10~A \\ 
+		\hline 
+		\textbf{Maximální spínaný výkon} &  2,5~kW \\ 
+		\hline 
+		\textbf{Přenos dat} & bezdrátově na frekvenci 868~MHz \\ 
+		\hline 
+		\textbf{Protokol} & IQRF DPA \\ 
+		\hline 
+		\textbf{Spotřeba zařízení} & x~W \\ 
+		\hline 
+		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\ 
+		\hline 
+		\textbf{Hmotnost} & x~g \\ 
+		\hline 
+		\textbf{Cena} & x~Kč \\ 
+		\hline 
+	\end{tabular}
+	\caption{Parametry chytré zásuvky}\label{table:parametry/chytra-zasuvka}
+\end{table}
 
-\subsection{Obvodové schéma}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|c|}
+		\hline 
+		\textbf{Parametr} & \textbf{Hodnota} \\ 
+		\hline 
+		\hline 
+		\textbf{Pracovní napětí} & 5~V DC \\ 
+		\hline 
+		\textbf{Spotřeba zařízení} & 5-10~W \\ 
+		\hline 
+		• & • \\ 
+		\hline 
+		• & • \\ 
+		\hline 
+		• & • \\ 
+		\hline 
+	\end{tabular} 
+	\caption{Parametry brány}\label{table:parametry/brana}
+\end{table}
 
-\subsection{Výkres plošného spoje a rozložení součástek}
+\section{Blokové schéma}
 
-\subsection{Rozpiska součástek}
+\begin{figure}[H]
+\label{fig:blokove-schema-zasuvky}
+\minipage{\textwidth}
+\includegraphics[width = 128mm]{img/blokove-schema-zasuvky.pdf}
+\caption{Blokové schéma chytré zásuvky}
+\endminipage
+\end{figure}
 
-\subsection{Software}
+\section{Obvodové schéma}
+
+\begin{figure}[H]
+\label{fig:schematic}
+\minipage{\textwidth}
+\includegraphics[width = 128mm]{img/schematic.pdf}
+\caption{Obvodové schéma chytré zásuvky}
+\endminipage
+\end{figure}
+
+\section{Výkres plošného spoje a rozložení součástek}
+
+\begin{figure}[H]
+\label{fig:board}
+\minipage{\textwidth}
+\includegraphics[width = 128mm]{img/board.pdf}
+\caption{Výkres plošného spoje chytré zásuvky}
+\endminipage
+\end{figure}
+
+\begin{figure}[H]
+\label{fig:components}
+\minipage{\textwidth}
+\includegraphics[width = 128mm]{img/components.pdf}
+\caption{Rozložení součástek na desce plošného spoje chytré zásuvky}
+\endminipage
+\end{figure}
+
+\section{Rozpiska součástek}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|l|l|}
+		\hline 
+		\textbf{Značka} & \textbf{Jméno součástky} \\ 
+		\hline 
+		\hline 
+		~ & Krabička COMBIPLAST CP-Z-27/B \\ 
+		\hline 
+		C1 & Keramický SMD 1206 kondenzátor 100~nF \\ 
+		\hline 
+		D1, D2 & Dioda 1N4007 \\ 
+		\hline 
+		F1 & Tavná keramická pojistka 10~A 250~VAC \\ 
+		\hline 
+		IC1 & Bezdrátový modul IQRF DCTR-72DAT \\ 
+		\hline 
+		~ & Konektoru IQRF KON-SIM-01 pro IC1 \\ 
+		\hline 
+		J1, J2 & Svorkovnice do DPS DEGSON DG300-7.5-02P \\ 
+		\hline 
+		Q1, Q2 & N-MOSFET BSS138 \\ 
+		\hline 
+		R1, R2 & Rezistor SMD 1206 10~k$\Omega$ \\ 
+		\hline 
+		RL1, RL2 & Relé OMRON G5Q-1A4-EU 5VDC \\ 
+		\hline 
+		RV1, RV2 & MOV SR PASSIVES VAR10-250 \\ 
+		\hline 
+		SW1 & Mikrospínač THT 6$\times$6~mm \\ 
+		\hline 
+		U1 & Spínaný zdroj MEAN WELL IRM-02-5 \\ 
+		\hline 
+	\end{tabular}
+	\caption{Rozpiska součástek chytré zásuvky}\label{table:rozpiska-soucastek}
+\end{table}
+
+\section{Software}
 
 \newpage
 
@@ -153,10 +273,15 @@ Text
 
 \newpage
 
+\appendix
+
 \begin{thebibliography}{99}
 
-\bibitem{raspi}
-\emph{Raspberry Pi} [online]. [cit. 2016-04-15]. Dostupné z: https://www.raspberrypi.org/
+\bibitem{ism-band}
+\emph{ISM Band} [online]. [cit. 2016-01-08]. Dostupné z: https://en.wikipedia.org/wiki/ISM\_band
+
+\bibitem{iqrf-dpa}
+\emph{IQRF DPA} [online]. [cit. 2016-01-08]. Dostupné z: http://iqrf.org/technology/dpa
 
 \end{thebibliography}
 
