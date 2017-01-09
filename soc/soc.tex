@@ -2,10 +2,14 @@
 \usepackage[utf8]{inputenc}
 \usepackage[czech]{babel}
 \usepackage[T1]{fontenc}
-\usepackage{graphicx}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{index}
+\usepackage{url}
 \author{Roman Ondráček}
 \title{Dálkové ovládání domácích spotřebičů mobilním telefonem}
+% Vytvoření seznamu použitých zkratek
+\newindex{zkr}{zdx}{znd}{Seznam použitých zkratek}
 \begin{document}
 % Řádkování 1,5
 \renewcommand{\baselinestretch}{1.5}
@@ -128,63 +132,29 @@ GSM; text message; IQRF; relay
 
 Minimálně již jeden rok se intenzivně mluví o Internetu věcí a domácí automatizaci. Na trhu jsou nabízeny chytré zásuvky, které bohužel nenabízejí možnost pohodlně a bezpečně je ovládat vzdáleně pomocí mobilního telefonu.
 
-Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na frekvenci 2,4~GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože tato frekvence se používá pro přenos dat přes WiFi nebo Bluetooth\cite{ism-band}. A většinou tyto chytré zásuvky lze pouze ovládat pouze v místní síti (LAN).
+Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na frekvenci 2,4~GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože tato frekvence se používá pro přenos dat přes WiFi nebo Bluetooth\cite{wiki-ism-band}. A většinou tyto chytré zásuvky lze pouze ovládat pouze v místní síti (LAN).
 
 \newpage
 
-\section{Technické parametry}
+\section{Hardware}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|c|}
-		\hline 
-		\textbf{Parametr} & \textbf{Hodnota} \\ 
-		\hline 
-		\hline 
-		\textbf{Pracovní napětí} & 90~V až 250~V AC \\ 
-		\hline 
-		\textbf{Maximální spínaný proud} & 10~A \\ 
-		\hline 
-		\textbf{Maximální spínaný výkon} &  2,5~kW \\ 
-		\hline 
-		\textbf{Přenos dat} & bezdrátově na frekvenci 868~MHz \\ 
-		\hline 
-		\textbf{Protokol} & IQRF DPA \\ 
-		\hline 
-		\textbf{Spotřeba zařízení} & x~W \\ 
-		\hline 
-		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\ 
-		\hline 
-		\textbf{Hmotnost} & x~g \\ 
-		\hline 
-		\textbf{Cena} & x~Kč \\ 
-		\hline 
-	\end{tabular}
-	\caption{Parametry chytré zásuvky}\label{table:parametry/chytra-zasuvka}
-\end{table}
+\subsection{Chytrá zásuvka}
 
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|l|c|}
-		\hline 
-		\textbf{Parametr} & \textbf{Hodnota} \\ 
-		\hline 
-		\hline 
-		\textbf{Pracovní napětí} & 5~V DC \\ 
-		\hline 
-		\textbf{Spotřeba zařízení} & 5-10~W \\ 
-		\hline 
-		• & • \\ 
-		\hline 
-		• & • \\ 
-		\hline 
-		• & • \\ 
-		\hline 
-	\end{tabular} 
-	\caption{Parametry brány}\label{table:parametry/brana}
-\end{table}
+Chytrá zásuvka je napájena ze sítě pomocí modulového spínaného zdroje do desky plošných spojů MEAN WELL IRM-02-5, který má výstupní napětí 5~V a maximální výstupní proud je 400~mA. Chytrá zásuvka je řízena bezdrátovým modulem IQRF DCTR-72DAT, který spíná dvě relé (jedno je použito pro spínání fáze a druhé relé je použito pro spínání nulového vodiče) OMRON G5Q-1A4-EU. Relé jsou spínána pomocí unipolárních tranzistorů N-MOSFET BSS138. Relé přitahuje kontakt cívkou, která má určitou indukčnost, a ta při rozepnutí proudu (který jí teče) vygeneruje napěťovou špičku, která by mohla spínací tranzistor prorazit. Paralelně zapojenou diodou k relé způsobíme to, že se při rozepnutí proudu uzavře obvod kolem indukčnosti a tak nedojde k proražení tranzistoru. Použil jsem usměrňovací diodu 1N4007.
 
-\section{Blokové schéma}
+\subsubsection{Bezdrátový modul IQRF DCTR-72DAT}
+
+V chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který vyrábí česká firma MICRORISC s.r.o., která sídlí v Jičíně. Plošný spoj modulu má podobné rozměry jako SIM karta, proto je pro jeho připojení s deskou plošných spojů použit konektor pro SIM karty. \\ 
+
+Modul může vysílat na bezlicenčních pásmech 916~MHz, které je určené pro Ameriku, a 868~MHz, určené pro zbytek světa. Vysílací výkon modulu je 12,5~mW, používá GMSK modulaci. Modul má integrovanou anténu na svém plošném spoji. \\
+
+Pro komunikaci používá tzv. mesh neboli smíšenou topologii, která má výhody v redundantnosti a v neexistenci centrálního prvku a nevýhody v nutné ochraně proti zacyklení a v nutnosti směrování provozu. \\
+
+Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO napěťový stabilizátor Microchip  MCP1700T-3002E/TT. Dále modul obsahuje mikrokontrolér Microchip PIC16LF1938, na kterém běží IQRF OS, který za uživatele zajišťuje komunikaci s integrovaným obvodem STMicroelectronics Spirit1, který řídí bezdrátový datový přenos a má hardwarovou podporu blokové šifry AES-128, a dalšími integrovanými periferiemi, IQRF DPA a uživatelská aplikace. Dále modul obsahuje digitální teploměr Microchip MCP9808E/MC. \\ 
+
+Ačkoliv je v integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v IQRF OS ještě implementována a místo blokové šifry AES-128 se používá upravená bloková šifra XTEA, která je méně bezpečná.
+
+\subsubsection{Blokové schéma}
 
 \begin{figure}[H]
 \label{fig:blokove-schema-zasuvky}
@@ -194,7 +164,7 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 \endminipage
 \end{figure}
 
-\section{Obvodové schéma}
+\subsubsection{Obvodové schéma}
 
 \begin{figure}[H]
 \label{fig:schematic}
@@ -204,7 +174,7 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 \endminipage
 \end{figure}
 
-\section{Výkres plošného spoje a rozložení součástek}
+\subsubsection{Výkres plošného spoje a rozložení součástek}
 
 \begin{figure}[H]
 \label{fig:board}
@@ -222,7 +192,7 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 \endminipage
 \end{figure}
 
-\section{Rozpiska součástek}
+\subsubsection{Rozpiska součástek}
 
 \begin{table}[H]
 	\centering
@@ -233,7 +203,7 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 		\hline 
 		~ & Krabička COMBIPLAST CP-Z-27/B \\ 
 		\hline 
-		C1 & Keramický SMD 1206 kondenzátor 100~nF \\ 
+		C1 & Keramický SMD\index[zkr]{SMD!Surface-mounted device|textit} 1206 kondenzátor 100~nF \\ 
 		\hline 
 		D1, D2 & Dioda 1N4007 \\ 
 		\hline 
@@ -261,7 +231,61 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 	\caption{Rozpiska součástek chytré zásuvky}\label{table:rozpiska-soucastek}
 \end{table}
 
+\subsection{Brána}
+
+Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model B. Bezdrátový modul IQRF DCTR-72DAT je k bráně připojen přes sběrnici SPI pomocí adaptéru IQRF KON-RASP-01. Pro komunikaci s GSM sítí lze použít USB GSM/3G modem (například Huawei E3131) nebo starší mobilní telefon (například Samsung Star II nebo Samsung Galaxy Gio). Brána se napájí pomocí externího spínaného zdroje s microUSB konektorem, který má výstupní napětí 5~V a maximální výstupní proud 2~A.
+
 \section{Software}
+
+\subsection{Chytrá zásuvka}
+
+Software chytré zásuvky je psán v programovacím jazyce C. 
+
+\subsubsection{IQRF OS}
+
+\subsubsection{IQRF DPA}
+
+\subsection{Brána}
+
+V bráně běží linuxová distribuce Raspbian, což je speciálně upravená linuxová distribuce pro jednodeskový počítač Raspberry Pi. Tato linuxová distribuce je odvozená od linuxové distribuce Debian, která je jedna z nejpoužívanějších linuxových distribucích. Software brány je psán v skriptovacím jazyce Python.
+
+\subsubsection{AT příkazy}
+
+AT příkazy se používají pro komunikaci s GSM modemem. 
+
+\newpage
+
+\section{Technické parametry}
+
+\subsection{Chytrá zásuvka}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lr}
+		\hline 
+		\textbf{Technické parametry} & ~ \\ 
+		\hline 
+		\hline 
+		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\ 
+		\textbf{Hmotnost} & x~g \\ 
+		\hline
+		\textbf{Elektrické parametry} \\ 
+		\hline 
+		\hline 
+		\textbf{Napájecí napětí} & 90~V až 250~V AC \\ 
+		\textbf{Maximální spotřeba} & 400~mA \\ 
+		\textbf{Maximální spínatelný proud} &  10~A \\ 
+		\hline 
+		\textbf{Ostatní parametry} \\ 
+		\hline 
+		\hline 
+		\textbf{Přenos dat} & bezdrátově na frekvenci 868~MHz \\ 
+		\textbf{Protokol} & IQRF DPA \\ 
+	\end{tabular}
+	\caption{Parametry chytré zásuvky}\label{table:parametry/chytra-zasuvka}
+\end{table}
+
+\subsection{Brána}
 
 \newpage
 
@@ -269,19 +293,34 @@ Většinou tyto chytré zásuvky jsou ovládány pomocí WiFi, které běží na
 
 \addcontentsline{toc}{section}{Závěr}
 
-Text
+Výsledkem této práce je funkční chytrá zásuvka, která splňuje veškeré požadavky.
 
 \newpage
 
-\appendix
+\printindex[zkr]
+
+\addcontentsline{toc}{section}{Seznam použitých zkratek}
+
+\newpage
 
 \begin{thebibliography}{99}
 
-\bibitem{ism-band}
-\emph{ISM Band} [online]. [cit. 2016-01-08]. Dostupné z: https://en.wikipedia.org/wiki/ISM\_band
+\addcontentsline{toc}{section}{Seznam použité literatury}
+
+\bibitem{wiki-ism-band}
+Wikipedia. ISM Band \emph{Wikipedia} [online]. [cit. 2016-01-08]. \\ Dostupné z: \url{https://en.wikipedia.org/wiki/ISM\_band}
+
+\bibitem{iqrf-os}
+MICRORISC. Operating system \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/technology/operating-system}
 
 \bibitem{iqrf-dpa}
-\emph{IQRF DPA} [online]. [cit. 2016-01-08]. Dostupné z: http://iqrf.org/technology/dpa
+MICRORISC. DPA \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/technology/dpa}
+
+\bibitem{iqrf-dctr-72d-datasheet}
+MICRORISC. Datasheet DCTR-72D \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/weben/downloads.php?id=337}
+
+\bibitem{robodoupe-mosfet-a-rele}
+Jiri Bezstarosti. Tranzistor jako spínač \emph{Robodoupě} [online]. 2012 [cit. 2017-01-09]. \\ Dostupné z: \url{http://robodoupe.cz/2012/tranzistor-jako-spinac/}
 
 \end{thebibliography}
 
@@ -289,6 +328,10 @@ Text
 
 \listoffigures
 
+\addcontentsline{toc}{section}{Seznam obrázků}
+
 \listoftables
+
+\addcontentsline{toc}{section}{Seznam tabulek}
 
 \end{document}
