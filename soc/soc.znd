@@ -1,6 +1,60 @@
 \begin{theindex}
 
+  \item AES
+    \subitem Advanced Encryption Standard, \textit{11}
+
+  \indexspace
+
+  \item DPA
+    \subitem Direct Peripheral Access, \textit{11}
+  \item DPS
+    \subitem Deska plošných spojů, \textit{15}
+
+  \indexspace
+
+  \item GSM
+    \subitem Global System for Mobile Communications, \textit{15}
+  \item GSMK
+    \subitem Gaussian minimum shift keying, \textit{11}
+
+  \indexspace
+
+  \item LDO
+    \subitem Low-dropout, \textit{11}
+
+  \indexspace
+
+  \item MOV
+    \subitem Metal Oxide Varistor, \textit{10}
+
+  \indexspace
+
+  \item N-MOSFET
+    \subitem N-Channel metal–oxide–semiconductor field-effect transistor, 
+		\textit{10}
+
+  \indexspace
+
+  \item OS
+    \subitem Operating system, \textit{11}
+
+  \indexspace
+
+  \item SIM
+    \subitem Subscriber identity module, \textit{10}
   \item SMD
-    \subitem Surface-mounted device, \textit{13}
+    \subitem Surface-mounted device, \textit{10}
+  \item SPI
+    \subitem Serial Peripheral Interface, \textit{15}
+
+  \indexspace
+
+  \item USB
+    \subitem Universal Serial Bus, \textit{15}
+
+  \indexspace
+
+  \item XTEA
+    \subitem eXtended Tiny Encryption Algorithm, \textit{11}
 
 \end{theindex}

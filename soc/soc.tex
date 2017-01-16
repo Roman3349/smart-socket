@@ -78,9 +78,9 @@
 
 \section*{Prohlášení}
 
-Prohlašuji, že svou práci na téma Dálkové ovládání domácích spotřebičů mobilním telefonem jsem vypracoval samostatně pod vedením prof. Ing. Václava Říčného, CSc. a s použitím odborné literatury a dalších informačních zdrojů, které jsou všechny citovány v práci a uvedeny v seznamu literatury na konci práce. \\
-Dále prohlašuji, že tištěná i elektronická verze práce SOČ jsou shodné a nemám závažný důvod proti zpřístupňování této práce v souladu se zákonem č.~121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a změně některých zákonů (autorský zákon) v platném změní. \\[8mm]
-V Boskovicích dne \today \hspace{24mm} Podpis: 
+Prohlašuji, že svou práci na téma Dálkové ovládání domácích spotřebičů mobilním telefonem jsem vypracoval samostatně pod vedením prof. Ing. Václava Říčného, CSc. a s použitím odborné literatury a dalších informačních zdrojů, které jsou všechny citovány v~práci a uvedeny v~seznamu literatury na konci práce. \\
+Dále prohlašuji, že tištěná i elektronická verze práce SOČ jsou shodné a nemám závažný důvod proti zpřístupňování této práce v~souladu se zákonem č.~121/2000 Sb., o právu autorském, o právech souvisejících s právem autorským a změně některých zákonů (autorský zákon) v~platném změní. \\[8mm]
+V~Boskovicích dne \today \hspace{24mm} Podpis: 
 
 \newpage
 
@@ -115,7 +115,7 @@ GSM; SMS; IQRF; relé
 
 \section*{Annotation}
 
-The goal of this work is to design and build an smart power socket, which is controlled  by a  text message and it can switch resistive loads up to a current 10~A. My work includes a technical documentation, description of a manufacturing process and the product itself.
+The goal of this work is to design and build a smart power socket, which is controlled  by a text message and it can switch resistive loads up to a current 10~A. My work includes a technical documentation, description of the manufacturing process and the product itself.
 
 \subsection*{Keywords}
 
@@ -131,11 +131,11 @@ GSM; text message; IQRF; relay
 
 \addcontentsline{toc}{section}{Úvod}
 
-V posledních létech je ve středu pozornosti tzv. Internet věcí (IoT) a chytrá domácnost. Na trhu jsou nabízeny chytré zásuvky, které však obvykle ovládány na kratší vzdálenosti a nenabízejí možnost pohodlně a bezpečně je ovládat vzdáleně pomocí mobilního telefonu. \\
+V~posledních létech je ve středu pozornosti tzv. Internet věcí (IoT) a chytrá domácnost. Na trhu jsou nabízeny chytré zásuvky, které však obvykle ovládány na kratší vzdálenosti a nenabízejí možnost pohodlně a bezpečně je ovládat vzdáleně pomocí mobilního telefonu. \\
 
-Obvykle jsou tyto chytré zásuvky ovládány pomocí komunikace WiFi, která používá kmitočtové pásmo 2,4 GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože  se  používá i pro přenosy jiných dat\cite{wiki-ism-band}. A proto většinou tyto chytré zásuvky lze ovládat pouze v místní síti (LAN). Tento projekt má tedy umožnit ovládat tyto zásuvky (a tedy i elektrické spotřebiče v nich zapojené) z libovolné vzdálenosti. Navržený systém dálkového ovládání pomocí mobilního telefonu by měl, kromě vlastního ovládání, zabezpečit i přenos informace uživateli o aktuálním stavu zásuvky. Cílem projektu je tedy návrh takové dálkově ovládané chytré zásuvky, její realizace a ověření funkčního vzorku. \\
+Obvykle jsou tyto chytré zásuvky ovládány pomocí komunikace WiFi, která používá kmitočtové pásmo 2,4 GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože  se  používá i pro přenosy jiných dat\cite{wiki-ism-band}. A proto většinou tyto chytré zásuvky lze ovládat pouze v~místní síti (LAN). Tento projekt má tedy umožnit ovládat tyto zásuvky (a tedy i elektrické spotřebiče v~nich zapojené) z libovolné vzdálenosti. Navržený systém dálkového ovládání pomocí mobilního telefonu by měl, kromě vlastního ovládání, zabezpečit i přenos informace uživateli o aktuálním stavu zásuvky. Cílem projektu je tedy návrh takové dálkově ovládané chytré zásuvky, její realizace a ověření funkčního vzorku. \\
 
-Většina chytrých zásuvek obsahuje pouze jedno relé\cite{teardown-wemo-switch}, protože musí se povinně spínat fáze (spínání nulového vodiče je nepovinné). To přináší problém, protože například ve Francii, kde se stejně jako v České republice použita zásuvka typu E\cite{zasuvka-typ-e}, je zdířka fáze umístěna vpravo nikoliv vlevo jako v České republice\cite{faze-vlevo-nebo-vpravo}. Proto navržené řešení obsahuje i druhé relé  pro spínání nulového vodiče. \\
+Většina chytrých zásuvek obsahuje pouze jedno relé\cite{teardown-wemo-switch}, protože musí se povinně spínat fáze (spínání nulového vodiče je nepovinné). To přináší problém, protože například ve Francii, kde se stejně jako v~České republice použita zásuvka typu E\cite{zasuvka-typ-e}, je zdířka fáze umístěna vpravo nikoliv vlevo jako v~České republice\cite{faze-vlevo-nebo-vpravo}. Proto navržené řešení obsahuje i druhé relé  pro spínání nulového vodiče. \\
 
 Pro řešení zadání projektu jsem se rozhodl použít technologii IQRF. Je to technologie vyvinutá českou firmou Microrisc s.r.o., která se poměrně často používá ve světě internetu věcí a jiných systémů pro bezdrátový přenos malých objemů dat. Firma dává k dispozici relativně malé moduly, které je  možno integrovat do konkrétních zákaznických řešení.
 
@@ -147,21 +147,21 @@ Pro řešení zadání projektu jsem se rozhodl použít technologii IQRF. Je to
 
 Chytrá zásuvka je napájena ze sítě pomocí modulového spínaného zdroje do desky plošných spojů MEAN WELL IRM-02-5, který má výstupní napětí 5~V a maximální výstupní proud je 400~mA. \\
 
-Chytrá zásuvka je řízena bezdrátovým modulem IQRF DCTR-72DAT, který spíná SMD unipolární tranzistory N-MOSFET BSS138. Ty spínají které spínají cívky dvou relé (jedno je použito pro spínání fáze a druhé relé je použito pro spínání nulového vodiče) OMRON G5Q-1A4-EU. \\
+Chytrá zásuvka je řízena bezdrátovým modulem IQRF DCTR-72DAT, který spíná SMD\index[zkr]{SMD!Surface-mounted device|textit} unipolární tranzistory N-MOSFET\index[zkr]{N-MOSFET!N-Channel metal–oxide–semiconductor field-effect transistor|textit} BSS138. Ty spínají které spínají cívky dvou relé (jedno je použito pro spínání fáze a druhé relé je použito pro spínání nulového vodiče) OMRON G5Q-1A4-EU. \\
 
-Při rozepnutí proudu v~cívce relé vzniká vlivem její indukčnosti napěťová špička, která může  zničit spínací tranzistor. Proražení tranzistoru lze zabránit diodou paralelně zapojenou k relé, která při rozepnutí relé uzavře obvod kolem indukčnosti. Použil jsem usměrňovací diodu 1N4007. Abych zabránil jiskření na kontaktech relé, jsem použil varistor MOV SR PASSIVES VAR10-250.
+Při rozepnutí proudu v~cívce relé vzniká vlivem její indukčnosti napěťová špička, která může  zničit spínací tranzistor. Proražení tranzistoru lze zabránit diodou paralelně zapojenou k relé, která při rozepnutí relé uzavře obvod kolem indukčnosti. Použil jsem usměrňovací diodu 1N4007. Abych zabránil jiskření na kontaktech relé, jsem použil varistor MOV\index[zkr]{MOV!Metal Oxide Varistor|textit} SR PASSIVES VAR10-250.
 
 \subsubsection{Bezdrátový modul IQRF DCTR-72DAT}
 
-V chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovněž vyrábí česká firma MICRORISC s.r.o., která sídlí v Jičíně. Plošný spoj modulu má podobné rozměry jako SIM karta, proto je pro jeho připojení s deskou plošných spojů použit konektor pro SIM karty. \\ 
+V~chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovněž vyrábí česká firma MICRORISC s.r.o., která sídlí v~Jičíně. Plošný spoj modulu má podobné rozměry jako SIM karta, proto je pro jeho připojení s deskou plošných spojů použit konektor pro SIM\index[zkr]{SIM!Subscriber identity module|textit} karty. \\ 
 
-Modul může vysílat na bezlicenčních pásmech 916~MHz, která je určené pro Ameriku, a 868~MHz, určené pro zbytek světa. Vysílací výkon modulu je 12,5~mW, používá GMSK modulaci. Modul má integrovanou anténu na svém plošném spoji. \\
+Modul může vysílat na bezlicenčních pásmech 916~MHz, která je určené pro Ameriku, a 868~MHz, určené pro zbytek světa. Vysílací výkon modulu je 12,5~mW, používá GMSK\index[zkr]{GSMK!Gaussian minimum shift keying|textit} modulaci. Modul má integrovanou anténu na svém plošném spoji. \\
 
-Pro komunikaci používá tzv. mesh neboli smíšenou topologii. Ta má výhody v~robustnosti a v absenci centrálního prvku. Její nevýhodou je naopak  potřebná ochrana proti zacyklení a  nutnost směrování provozu.  \\
+Pro komunikaci používá tzv. mesh neboli smíšenou topologii. Ta má výhody v~robustnosti a v~absenci centrálního prvku. Její nevýhodou je naopak  potřebná ochrana proti zacyklení a  nutnost směrování provozu. \\
 
-Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO napěťový stabilizátor Microchip  MCP1700T-3002E/TT. Dále modul obsahuje mikrokontrolér Microchip PIC16LF1938. Ten užívá operační systém IQRF OS, který za uživatele zajišťuje komunikaci s integrovaným obvodem STMicroelectronics Spirit1. Tento obvod řídí bezdrátový datový přenos a má hardwarovou podporu blokové šifry AES-128. Operační systém dále ovládá integrované periferie (například digitální teploměr). IQRF DPA a uživatelská aplikace. Dále modul obsahuje digitální teploměr Microchip MCP9808E/MC. \\ 
+Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO\index[zkr]{LDO!Low-dropout|textit} napěťový stabilizátor Microchip  MCP1700T-3002E/TT. Dále modul obsahuje mikrokontrolér Microchip PIC16LF1938. Ten užívá operační systém IQRF OS, který za uživatele zajišťuje komunikaci s integrovaným obvodem STMicroelectronics Spirit1. Tento obvod řídí bezdrátový datový přenos a má hardwarovou podporu blokové šifry AES-128\index[zkr]{AES!Advanced Encryption Standard|textit}. Operační systém dále ovládá integrované periferie (například digitální teploměr). IQRF DPA\index[zkr]{DPA!Direct Peripheral Access|textit} a uživatelská aplikace. Dále modul obsahuje digitální teploměr Microchip MCP9808E/MC. \\ 
 
-Přestože je v integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v IQRF OS ještě implementována a místo ní se používá upravená bloková šifra XTEA, která je však méně bezpečná.
+Přestože je v~integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v~IQRF OS\index[zkr]{OS!Operating system|textit} ještě implementována a místo ní se používá upravená bloková šifra XTEA\index[zkr]{XTEA!eXtended Tiny Encryption Algorithm|textit}, která je však méně bezpečná.
 
 \subsubsection{Blokové schéma}
 
@@ -208,7 +208,7 @@ Přestože je v integrovaném obvodu řídící radiovou komunikaci hardwarová 
 		\hline 
 		~ & Krabička COMBIPLAST CP-Z-27/B \\ 
 		\hline 
-		C1 & Keramický SMD\index[zkr]{SMD!Surface-mounted device|textit} 1206 kondenzátor 100~nF \\ 
+		C1 & Keramický SMD 1206 kondenzátor 100~nF \\ 
 		\hline 
 		D1, D2 & Dioda 1N4007 \\ 
 		\hline 
@@ -218,7 +218,7 @@ Přestože je v integrovaném obvodu řídící radiovou komunikaci hardwarová 
 		\hline 
 		~ & Konektoru IQRF KON-SIM-01 pro IC1 \\ 
 		\hline 
-		J1, J2 & Svorkovnice do DPS DEGSON DG300-7.5-02P \\ 
+		J1, J2 & Svorkovnice do DPS\index[zkr]{DPS!Deska plošných spojů|textit} DEGSON DG300-7.5-02P \\ 
 		\hline 
 		Q1, Q2 & N-MOSFET BSS138 \\ 
 		\hline 
@@ -238,33 +238,33 @@ Přestože je v integrovaném obvodu řídící radiovou komunikaci hardwarová 
 
 \subsection{Brána}
 
-Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model B. Bezdrátový modul IQRF DCTR-72DAT je k bráně připojen přes sběrnici SPI pomocí adaptéru IQRF KON-RASP-01. Pro komunikaci s GSM sítí lze použít USB GSM/3G modem (například Huawei E3131) nebo starší mobilní telefon (například Samsung Star II nebo Samsung Galaxy Gio). Brána se napájí pomocí externího spínaného zdroje s microUSB konektorem, který má výstupní napětí 5~V a maximální výstupní proud 2~A.
+Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model B. Bezdrátový modul IQRF DCTR-72DAT je k bráně připojen přes sběrnici SPI\index[zkr]{SPI!Serial Peripheral Interface|textit} pomocí adaptéru IQRF KON-RASP-01. Pro komunikaci s GSM sítí lze použít USB\index[zkr]{USB!Universal Serial Bus|textit} GSM\index[zkr]{GSM!Global System for Mobile Communications|textit}/3G modem (například Huawei E3131) nebo starší mobilní telefon (například Samsung Star II nebo Samsung Galaxy Gio). Brána se napájí pomocí externího spínaného zdroje s microUSB konektorem, který má výstupní napětí 5~V a maximální výstupní proud 2~A.
 
 \section{Návrh software}
 
 \subsection{Chytrá zásuvka}
 
-Software chytré zásuvky je psán v programovacím jazyce C. Pro práci s periferiemi bezdrátového modulu je použita sada funkcí IQRF OS. 
+Software chytré zásuvky je psán v~programovacím jazyce C. Pro práci s periferiemi bezdrátového modulu je použita sada funkcí IQRF OS. 
 
 \subsubsection{IQRF OS}
 
-IQRF OS je sada funkcí psaná v programovacím jazyce C, které může uživatel ze svého programu volat pomocí hlavičkových souborů IQRF-functions.h, IQRF-macros.h, IQRF-memory.h a template-basic.h. Tyto funkce řídí komunikaci s integrovaným obvodem, který se stará o rádiovou komunikaci, o komunikaci v mesh síti, o komunikaci přes sběrnici SPI, o práci s pamětmi RAM, EEPROM, o čtení hodnot z integrovaného teplotního senzoru, o čtení hodnot z analogově digitálního převodníku, o generování PWM výstupu, o inicializaci vstupních a výstupních vývodů mikrokontroléru, o čtení hodnot z vstupních vývodů mikrokontroléru, o spínání výstupních pinů mikrokontroléru a o správu LED diod, které jsou integrovány v bezdrátovém modulu. 
+IQRF OS je sada funkcí psaná v~programovacím jazyce C, které může uživatel ze svého programu volat pomocí hlavičkových souborů IQRF-functions.h, IQRF-macros.h, IQRF-memory.h a template-basic.h. Tyto funkce řídí komunikaci s integrovaným obvodem, který se stará o rádiovou komunikaci, o komunikaci v~mesh síti, o komunikaci přes sběrnici SPI, o práci s pamětmi RAM, EEPROM, o čtení hodnot z integrovaného teplotního senzoru, o čtení hodnot z analogově digitálního převodníku, o generování PWM výstupu, o inicializaci vstupních a výstupních vývodů mikrokontroléru, o čtení hodnot z vstupních vývodů mikrokontroléru, o spínání výstupních pinů mikrokontroléru a o správu LED diod, které jsou integrovány v~bezdrátovém modulu. 
 
 \subsubsection{IQRF DPA}
 
-IQRF DPA je vrstva nad IQRF OS, která se stará o protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, kterou naleznete v tabulce. Centrální prvek v IQRF mesh síti se jmenuje koordinátor, který je umístěn v bráně. Koordinátor má se své paměti EEPROM uložené informace o dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v EEPROM paměti, tak data ignoruje.
+IQRF DPA je vrstva nad IQRF OS, která se stará o protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, kterou naleznete v~tabulce. Centrální prvek v~IQRF mesh síti se jmenuje koordinátor, který je umístěn v~bráně. Koordinátor má se své paměti EEPROM uložené informace o dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v~EEPROM paměti, tak data ignoruje.
 
 \subsection{Brána}
 
-V bráně běží linuxová distribuce Raspbian, což je speciálně upravená linuxová distribuce pro jednodeskový počítač Raspberry Pi. Tato linuxová distribuce je odvozená od linuxové distribuce Debian, která je jedna z nejpoužívanějších linuxových distribucích. Software brány je psán v skriptovacím jazyce Python. Abych si byl jistý, že všechny komponenty softwaru brány fungují, tak jsem pomocí nástroje unittest psal unit testy, které testují důležité komponenty (například čtení konfiguračního souboru). \\
+V~bráně běží linuxová distribuce Raspbian, což je speciálně upravená linuxová distribuce pro jednodeskový počítač Raspberry Pi. Tato linuxová distribuce je odvozená od linuxové distribuce Debian, která je jedna z nejpoužívanějších linuxových distribucích. Software brány je psán v~skriptovacím jazyce Python. Abych si byl jistý, že všechny komponenty softwaru brány fungují, tak jsem pomocí nástroje unittest psal unit testy, které testují důležité komponenty (například čtení konfiguračního souboru). \\
 
-Konfigurační soubor softwaru brány je psán v datovém formátu JSON. A níže naleznete ukázkový konfigurační soubor.
+Konfigurační soubor softwaru brány je psán v~datovém formátu JSON. A níže naleznete ukázkový konfigurační soubor.
 
 \subsubsection{AT příkazy}
 
-AT příkazy jsou sada příkazů, které se používají pro komunikaci s GSM modemem. Dříve se AT příkazům říkalo Hayesovy příkazy. AT příkazy vymyslel Dennis Hayes pro svůj Hayes Smartmodem 300. Pojmenování AT příkazy vzniklo podle slova \textbf{AT}tention, což v češtině znamená pozor, upozornit. \\
+AT příkazy jsou sada příkazů, které se používají pro komunikaci s GSM modemem. Dříve se AT příkazům říkalo Hayesovy příkazy. AT příkazy vymyslel Dennis Hayes pro svůj Hayes Smartmodem 300. Pojmenování AT příkazy vzniklo podle slova \textbf{AT}tention, což v~češtině znamená pozor, upozornit. \\
 
-Základní AT příkaz je příkaz \textit{AT}, který odpoví OK, pokud je vše v pořádku. Příkaz \textit{ATI} vypisuje informace o modemu (například výrobce a model). Pomocí příkazu \textit{AT+CMGF=1} nastavím textový ASCII přenos dat. \\
+Základní AT příkaz je příkaz \textit{AT}, který odpoví OK, pokud je vše v~pořádku. Příkaz \textit{ATI} vypisuje informace o modemu (například výrobce a model). Pomocí příkazu \textit{AT+CMGF=1} nastavím textový ASCII přenos dat. \\
 
 Pokud je SIM karta chráněna PIN kódem, tak SIM kartu odemknu pomocí příkazu \textit{AT+CPIN=PIN-SIM-KARTY} a poté pomocí příkazu \textit{AT+CPIN?} ověřím, zda byl zadán správný PIN kód. \\
 
@@ -288,7 +288,7 @@ Pomocí příkazu \textit{ATD+420123456789;} vytočím telefonní číslo +42012
 		\hline 
 		AT+CPIN=1234 & Odemkne SIM kartu pomocí PINu 1234 \\ 
 		\hline 
-		AT+CPIN? & Odpoví, zda-li je PIN v pořádku \\ 
+		AT+CPIN? & Odpoví, zda-li je PIN v~pořádku \\ 
 		\hline 
 		AT+CMGF=1 & Nastavíme testový ASCII přenos dat \\ 
 		\hline 
@@ -310,7 +310,7 @@ Pomocí příkazu \textit{ATD+420123456789;} vytočím telefonní číslo +42012
 
 Pro vybraný bezdrátový modul je pouze k dispozici zdarma stažitelné vývojové prostředí IQRF IDE, které je bohužel pouze pro operační systém Microsoft Windows. Uživatelé Apple OS X nebo libovolné linuxové distribuce nemohou vyvíjet software pro tyto bezdrátové moduly.
 
-Software, který běží v bráně jsem psal v vývojovém prostředí Atom IDE, které je open-source a je multiplatformní.
+Software, který běží v~bráně jsem psal v~vývojovém prostředí Atom IDE, které je open-source a je multiplatformní.
 
 \newpage
 
@@ -332,7 +332,7 @@ Software, který běží v bráně jsem psal v vývojovém prostředí Atom IDE,
 		\hline 
 		\hline 
 		\textbf{Napájecí napětí} & 90~V až 250~V AC \\ 
-		\textbf{Maximální spotřeba} & 400~mA \\ 
+		\textbf{Maximální odběr proudu} & 400~mA \\ 
 		\textbf{Maximální spínatelný proud} &  10~A \\ 
 		\hline 
 		\textbf{Ostatní parametry} \\ 
@@ -385,7 +385,7 @@ MICRORISC. Datasheet DCTR-72D \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-
 Jiri Bezstarosti. Tranzistor jako spínač \emph{Robodoupě} [online]. 2012 [cit. 2017-01-09]. \\ Dostupné z: \url{http://robodoupe.cz/2012/tranzistor-jako-spinac/}
 
 \bibitem{faze-vlevo-nebo-vpravo}
-Jaroslav Borovec. Fáze vlevo nebo vpravo, v čem tkví nebezpečí? \emph{Eletrika.cz} [online]. 2009 [cit. 2017-01-09]. \\ Dostupné z: \url{http://elektrika.cz/clanky/faze-vlevo-nebo-vpravo-v-cem-tkvi-nebezpeci}
+Jaroslav Borovec. Fáze vlevo nebo vpravo, v~čem tkví nebezpečí? \emph{Eletrika.cz} [online]. 2009 [cit. 2017-01-09]. \\ Dostupné z: \url{http://elektrika.cz/clanky/faze-vlevo-nebo-vpravo-v-cem-tkvi-nebezpeci}
 
 \bibitem{zasuvka-typ-e}
 Oldřich Mrázek. Přehled zásuvek používaných ve světě - Typ E \emph{HW Server} [online]. 2009 [cit. 2017-01-09]. \\ Dostupné z: \url{http://zasuvky.hw.cz/index2.php#E}
