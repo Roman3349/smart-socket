@@ -155,15 +155,31 @@ Při rozepnutí proudu v~cívce relé vzniká vlivem její indukčnosti napěťo
 
 V~chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovněž vyrábí česká firma MICRORISC s.r.o., která sídlí v~Jičíně. Plošný spoj modulu má podobné rozměry jako SIM karta, proto je pro jeho připojení s~deskou plošných spojů použit konektor pro SIM\index[zkr]{SIM!Subscriber identity module|textit} karty. \\ 
 
+\begin{figure}[H]
+\centering
+\label{fig:iqrf/fotka}
+\includegraphics[width = 64mm]{img/iqrf.png}
+\caption{Fotografie bezdrátového modulu}
+\end{figure}
+
 Modul může vysílat na bezlicenčních pásmech 916~MHz, která je určené pro Ameriku, a 868~MHz, určené pro zbytek světa. Vysílací výkon modulu je 12,5~mW, používá GMSK\index[zkr]{GSMK!Gaussian minimum shift keying|textit} modulaci. Modul má integrovanou anténu na svém plošném spoji. \\
 
 Pro komunikaci používá tzv. mesh neboli smíšenou topologii. Ta má výhody v~robustnosti a v~absenci centrálního prvku. Její nevýhodou je naopak potřebná ochrana proti zacyklení a nutnost směrování provozu. \\
 
 Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO\index[zkr]{LDO!Low-dropout|textit} napěťový stabilizátor Microchip MCP1700T-3002E/TT. Dále modul obsahuje mikrokontrolér Microchip PIC16LF1938. Ten užívá operační systém IQRF OS, který za uživatele zajišťuje komunikaci s~integrovaným obvodem STMicroelectronics Spirit1. Tento obvod řídí bezdrátový datový přenos a má hardwarovou podporu blokové šifry AES-128\index[zkr]{AES!Advanced Encryption Standard|textit}. Operační systém dále ovládá integrované periferie (například digitální teploměr). IQRF DPA\index[zkr]{DPA!Direct Peripheral Access|textit} a uživatelská aplikace. Dále modul obsahuje digitální teploměr Microchip MCP9808E/MC. \\ 
 
+\begin{figure}[H]
+\centering
+\label{fig:iqrf/zjednodusene-schema}
+\includegraphics[width = 128mm]{img/iqrf-zjednodusene-schema.png}
+\caption{Zjednodušené schéma bezdrátového modulu}
+\end{figure}
+
 Přestože je v~integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v~IQRF OS\index[zkr]{OS!Operating system|textit} ještě implementována a místo ní se používá upravená bloková šifra XTEA\index[zkr]{XTEA!eXtended Tiny Encryption Algorithm|textit}, která je však méně bezpečná.
 
 \subsubsection{Blokové schéma}
+
+Na obrázku č.~3 se nachází blokové schéma chytré zásuvky, které popisuje její zapojení. Obrázek byl vytvořený v open-source programu Dia\cite{sw/dia}.
 
 \begin{figure}[H]
 \centering
@@ -173,6 +189,8 @@ Přestože je v~integrovaném obvodu řídící radiovou komunikaci hardwarová 
 \end{figure}
 
 \subsubsection{Obvodové schéma}
+
+Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je vytvořen v open-source programu KiCad\cite{sw/kicad}.
 
 \begin{figure}[H]
 \centering
@@ -392,6 +410,13 @@ Oldřich Mrázek. Přehled zásuvek používaných ve světě - Typ E \emph{HW S
 
 \bibitem{teardown-wemo-switch}
 Brian Dipert. Teardown: WeMo Switch is highly integrated \emph{EDN} [online]. 2015 [cit. 2017-01-09]. \\ Dostupné z: \url{http://www.edn.com/design/consumer/4440797/Teardown--WeMo-Switch-is-highly-integrated}
+
+\bibitem{sw/dia}
+Dia \emph{Dia} [online]. [cit. 2017-01-19]. \\ Dostupné z: \url{https://wiki.gnome.org/Apps/Dia/}
+
+\bibitem{sw/kicad}
+KiCad EDA \emph{KiCad EDA} [online]. [cit. 2017-01-19]. \\ Dostupné z: \url{http://kicad-pcb.org/}
+
 \end{thebibliography}
 
 \newpage

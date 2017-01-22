@@ -8,12 +8,12 @@
   \item DPA
     \subitem Direct Peripheral Access, \textit{11}
   \item DPS
-    \subitem Deska plošných spojů, \textit{15}
+    \subitem Deska plošných spojů, \textit{16}
 
   \indexspace
 
   \item GSM
-    \subitem Global System for Mobile Communications, \textit{15}
+    \subitem Global System for Mobile Communications, \textit{16}
   \item GSMK
     \subitem Gaussian minimum shift keying, \textit{11}
 
@@ -36,7 +36,7 @@
   \indexspace
 
   \item OS
-    \subitem Operating system, \textit{11}
+    \subitem Operating system, \textit{12}
 
   \indexspace
 
@@ -45,16 +45,16 @@
   \item SMD
     \subitem Surface-mounted device, \textit{10}
   \item SPI
-    \subitem Serial Peripheral Interface, \textit{15}
+    \subitem Serial Peripheral Interface, \textit{16}
 
   \indexspace
 
   \item USB
-    \subitem Universal Serial Bus, \textit{15}
+    \subitem Universal Serial Bus, \textit{16}
 
   \indexspace
 
   \item XTEA
-    \subitem eXtended Tiny Encryption Algorithm, \textit{11}
+    \subitem eXtended Tiny Encryption Algorithm, \textit{12}
 
 \end{theindex}
