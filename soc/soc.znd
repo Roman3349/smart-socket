@@ -1,17 +1,22 @@
 \begin{theindex}
 
   \item AES
-    \subitem Advanced Encryption Standard, \textit{11}
+    \subitem Advanced Encryption Standard, \textit{12}
+  \item ARM
+    \subitem Acorn RISC Machine, \textit{17}
+    \subitem Advanced RISC Machine, \textit{17}
 
   \indexspace
 
   \item DPA
-    \subitem Direct Peripheral Access, \textit{11}
+    \subitem Direct Peripheral Access, \textit{12}
   \item DPS
     \subitem Deska plošných spojů, \textit{16}
 
   \indexspace
 
+  \item GPIO
+    \subitem General-purpose input/output, \textit{17}
   \item GSM
     \subitem Global System for Mobile Communications, \textit{16}
   \item GSMK
@@ -19,6 +24,13 @@
 
   \indexspace
 
+  \item I2C
+    \subitem Inter-Integrated Circuit, \textit{17}
+
+  \indexspace
+
+  \item LAN
+    \subitem Local area network, \textit{8}
   \item LDO
     \subitem Low-dropout, \textit{11}
 
@@ -37,18 +49,27 @@
 
   \item OS
     \subitem Operating system, \textit{12}
+    \subitem Operační systém, \textit{12}
+
+  \indexspace
+
+  \item RAM
+    \subitem Random-access memory, \textit{17}
 
   \indexspace
 
   \item SIM
-    \subitem Subscriber identity module, \textit{10}
+    \subitem Subscriber identity module, \textit{11}
   \item SMD
     \subitem Surface-mounted device, \textit{10}
   \item SPI
-    \subitem Serial Peripheral Interface, \textit{16}
+    \subitem Serial Peripheral Interface, \textit{16, 17}
 
   \indexspace
 
+  \item USART
+    \subitem Universal Synchronous / Asynchronous Receiver and Transmitter, 
+		\textit{17}
   \item USB
     \subitem Universal Serial Bus, \textit{16}
 

@@ -133,7 +133,7 @@ GSM; text message; IQRF; relay
 
 V~posledních létech je ve středu pozornosti tzv. Internet věcí (IoT) a chytrá domácnost. Na trhu jsou nabízeny chytré zásuvky, které však obvykle ovládány na kratší vzdálenosti a nenabízejí možnost pohodlně a bezpečně je ovládat vzdáleně pomocí mobilního telefonu. \\
 
-Obvykle jsou tyto chytré zásuvky ovládány pomocí komunikace WiFi, která používá kmitočtové pásmo 2,4 GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože se používá i pro přenosy jiných dat\cite{wiki-ism-band}. A proto většinou tyto chytré zásuvky lze ovládat pouze v~místní síti (LAN). Tento projekt má tedy umožnit ovládat tyto zásuvky (a tedy i elektrické spotřebiče v~nich zapojené) z~libovolné vzdálenosti. Navržený systém dálkového ovládání pomocí mobilního telefonu by měl, kromě vlastního ovládání, zabezpečit i přenos informace uživateli o~aktuálním stavu zásuvky. Cílem projektu je tedy návrh takové dálkově ovládané chytré zásuvky, její realizace a ověření funkčního vzorku. \\
+Obvykle jsou tyto chytré zásuvky ovládány pomocí komunikace WiFi, která používá kmitočtové pásmo 2,4 GHz. Tato frekvence je hlavně ve městech hodně zarušená, protože se používá i pro přenosy jiných dat\cite{wiki-ism-band}. A proto většinou tyto chytré zásuvky lze ovládat pouze v~místní síti (LAN\index[zkr]{LAN!Local area network|textit}). Tento projekt má tedy umožnit ovládat tyto zásuvky (a tedy i elektrické spotřebiče v~nich zapojené) z~libovolné vzdálenosti. Navržený systém dálkového ovládání pomocí mobilního telefonu by měl, kromě vlastního ovládání, zabezpečit i přenos informace uživateli o~aktuálním stavu zásuvky. Cílem projektu je tedy návrh takové dálkově ovládané chytré zásuvky, její realizace a ověření funkčního vzorku. \\
 
 Většina chytrých zásuvek obsahuje pouze jedno relé\cite{teardown-wemo-switch}, protože musí se povinně spínat fáze (spínání nulového vodiče je nepovinné). To přináší problém, protože například ve Francii, kde se stejně jako v~České republice použita zásuvka typu E\cite{zasuvka-typ-e}, je zdířka fáze umístěna vpravo nikoliv vlevo jako v~České republice\cite{faze-vlevo-nebo-vpravo}. Proto navržené řešení obsahuje i druhé relé pro spínání nulového vodiče. \\
 
@@ -151,9 +151,11 @@ Chytrá zásuvka je řízena bezdrátovým modulem IQRF DCTR-72DAT, který spín
 
 Při rozepnutí proudu v~cívce relé vzniká vlivem její indukčnosti napěťová špička, která může zničit spínací tranzistor. Proražení tranzistoru lze zabránit diodou paralelně zapojenou k~relé, která při rozepnutí relé uzavře obvod kolem indukčnosti. Použil jsem usměrňovací diodu 1N4007. Abych zabránil jiskření na kontaktech relé, jsem použil varistor MOV\index[zkr]{MOV!Metal Oxide Varistor|textit} SR PASSIVES VAR10-250.
 
+\newpage
+
 \subsubsection{Bezdrátový modul IQRF DCTR-72DAT}
 
-V~chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovněž vyrábí česká firma MICRORISC s.r.o., která sídlí v~Jičíně. Plošný spoj modulu má podobné rozměry jako SIM karta, proto je pro jeho připojení s~deskou plošných spojů použit konektor pro SIM\index[zkr]{SIM!Subscriber identity module|textit} karty. \\ 
+V~chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovněž vyrábí česká firma MICRORISC s.r.o., která sídlí v~Jičíně. Plošný spoj modulu má podobné rozměry jako SIM\index[zkr]{SIM!Subscriber identity module|textit} karta, proto je pro jeho připojení s~deskou plošných spojů použit konektor pro SIM karty. \\ 
 
 \begin{figure}[H]
 \centering
@@ -175,7 +177,9 @@ Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO\index[zkr]{L
 \caption{Zjednodušené schéma bezdrátového modulu}
 \end{figure}
 
-Přestože je v~integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v~IQRF OS\index[zkr]{OS!Operating system|textit} ještě implementována a místo ní se používá upravená bloková šifra XTEA\index[zkr]{XTEA!eXtended Tiny Encryption Algorithm|textit}, která je však méně bezpečná.
+Přestože je v~integrovaném obvodu řídící radiovou komunikaci hardwarová podpora šifry AES-128, tak podpora této šifry není v~IQRF OS\index[zkr]{OS!Operating system|textit}\index[zkr]{OS!Operační systém|textit} ještě implementována a místo ní se používá upravená bloková šifra XTEA\index[zkr]{XTEA!eXtended Tiny Encryption Algorithm|textit}, která je však méně bezpečná.
+
+\newpage
 
 \subsubsection{Blokové schéma}
 
@@ -188,6 +192,8 @@ Na obrázku č.~3 se nachází blokové schéma chytré zásuvky, které popisuj
 \caption{Blokové schéma chytré zásuvky}
 \end{figure}
 
+\newpage
+
 \subsubsection{Obvodové schéma}
 
 Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je vytvořen v open-source programu KiCad\cite{sw/kicad}.
@@ -198,6 +204,8 @@ Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je v
 \includegraphics[width = 128mm]{img/schematic.pdf}
 \caption{Obvodové schéma chytré zásuvky}
 \end{figure}
+
+\newpage
 
 \subsubsection{Výkres plošného spoje a rozložení součástek}
 
@@ -214,6 +222,8 @@ Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je v
 \includegraphics{img/components.pdf}
 \caption{Rozložení součástek na desce plošného spoje chytré zásuvky}
 \end{figure}
+
+\newpage
 
 \subsubsection{Rozpiska součástek}
 
@@ -257,6 +267,38 @@ Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je v
 \subsection{Brána}
 
 Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model B. Bezdrátový modul IQRF DCTR-72DAT je k~bráně připojen přes sběrnici SPI\index[zkr]{SPI!Serial Peripheral Interface|textit} pomocí adaptéru IQRF KON-RASP-01. Pro komunikaci s~GSM sítí lze použít USB\index[zkr]{USB!Universal Serial Bus|textit} GSM\index[zkr]{GSM!Global System for Mobile Communications|textit}/3G modem (například Huawei E3131) nebo starší mobilní telefon (například Samsung Star II nebo Samsung Galaxy Gio). Brána se napájí pomocí externího spínaného zdroje s~microUSB konektorem, který má výstupní napětí 5~V a maximální výstupní proud 2~A.
+
+\subsubsection{Raspberry Pi 2 model B}
+
+Raspberry Pi 2 model B je jednodeskový počítač, který má rozměry podobné kreditní kartě. Tento počítač obsahuje: 
+
+\begin{itemize}
+	% Řádkování 1,5
+	\renewcommand{\baselinestretch}{1.5}
+	\item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836, který pracuje na frekvenci 900~MHz,
+	\item 1~GB operační paměti RAM\index[zkr]{RAM!Random-access memory|textit},
+	\item čtyři USB 2.0 porty
+	\item Ethernet port pro 100~Mb síťovou kartu,
+	\item microSD slot,
+	\item HDMI výstup,
+	\item 40 GPIO\index[zkr]{GPIO!General-purpose input/output|textit} pinů,
+	\item sběrnice SPI\index[zkr]{SPI!Serial Peripheral Interface|textit}, I2C\index[zkr]{I2C!Inter-Integrated Circuit|textit}, USART\index[zkr]{USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}.
+\end{itemize}
+
+\newpage
+
+\subsubsection{Blokové schéma brány}
+
+Na obrázku č.~7 se nachází blokové schéma brány, které popisuje její zapojení. Obrázek byl vytvořený v open-source programu Dia\cite{sw/dia}.
+
+\begin{figure}[H]
+\centering
+\label{fig:blokove-schema-zasuvky}
+\includegraphics[width = 128mm]{img/blokove-schema-brany.pdf}
+\caption{Blokové schéma brány}
+\end{figure}
+
+\newpage
 
 \section{Návrh software}
 
@@ -364,6 +406,25 @@ Software, který běží v~bráně jsem psal v~vývojovém prostředí Atom IDE,
 
 \subsection{Brána}
 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lr}
+		\hline 
+		\textbf{Technické parametry} & ~ \\ 
+		\hline 
+		\hline 
+		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\ 
+		\textbf{Hmotnost} & x~g \\ 
+		\hline
+		\textbf{Elektrické parametry} \\ 
+		\hline 
+		\hline 
+		\textbf{Napájecí napětí} & 5~V DC \\
+		\textbf{Maximální odběr proudu} & 2~A \\
+	\end{tabular}
+	\caption{Parametry brány}\label{table:parametry/zbrana}
+\end{table}
+
 \newpage
 
 \section*{Závěr}
@@ -390,6 +451,9 @@ Wikipedia. ISM Band \emph{Wikipedia} [online]. [cit. 2016-01-08]. \\ Dostupné z
 \bibitem{hayes-command-set}
 Wikipedia. Hayes command set \emph{Wikipedia} [online]. [cit. 2016-01-08]. \\ Dostupné z: \url{https://en.wikipedia.org/wiki/Hayes\_command\_set}
 
+\bibitem{iqrf-ide}
+MICRORISC. IQRF IDE \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/technology/iqrf-ide}
+
 \bibitem{iqrf-os}
 MICRORISC. Operating system \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/technology/operating-system}
 
@@ -398,6 +462,9 @@ MICRORISC. DPA \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupn
 
 \bibitem{iqrf-dctr-72d-datasheet}
 MICRORISC. Datasheet DCTR-72D \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-09]. \\ Dostupné z: \url{http://iqrf.org/weben/downloads.php?id=337}
+
+\bibitem{iqrf-kon-rasp-01-datasheet}
+MICRORISC. Datasheet KON-RASP-01 \emph{IQRF} [online]. Jičín, 2016 [cit. 2017-01-23]. \\ Dostupné z: \url{http://www.iqrf.org/weben/downloads.php?id=412}
 
 \bibitem{robodoupe-mosfet-a-rele}
 Jiri Bezstarosti. Tranzistor jako spínač \emph{Robodoupě} [online]. 2012 [cit. 2017-01-09]. \\ Dostupné z: \url{http://robodoupe.cz/2012/tranzistor-jako-spinac/}

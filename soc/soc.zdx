@@ -1,14 +1,23 @@
+\indexentry {LAN!Local area network|textit}{8}
 \indexentry {SMD!Surface-mounted device|textit}{10}
 \indexentry {N-MOSFET!N-Channel metal–oxide–semiconductor field-effect transistor|textit}{10}
 \indexentry {MOV!Metal Oxide Varistor|textit}{10}
-\indexentry {SIM!Subscriber identity module|textit}{10}
+\indexentry {SIM!Subscriber identity module|textit}{11}
 \indexentry {GSMK!Gaussian minimum shift keying|textit}{11}
 \indexentry {LDO!Low-dropout|textit}{11}
-\indexentry {AES!Advanced Encryption Standard|textit}{11}
-\indexentry {DPA!Direct Peripheral Access|textit}{11}
+\indexentry {AES!Advanced Encryption Standard|textit}{12}
+\indexentry {DPA!Direct Peripheral Access|textit}{12}
 \indexentry {OS!Operating system|textit}{12}
+\indexentry {OS!Operační systém|textit}{12}
 \indexentry {XTEA!eXtended Tiny Encryption Algorithm|textit}{12}
 \indexentry {DPS!Deska plošných spojů|textit}{16}
 \indexentry {SPI!Serial Peripheral Interface|textit}{16}
 \indexentry {USB!Universal Serial Bus|textit}{16}
 \indexentry {GSM!Global System for Mobile Communications|textit}{16}
+\indexentry {ARM!Acorn RISC Machine|textit}{17}
+\indexentry {ARM!Advanced RISC Machine|textit}{17}
+\indexentry {RAM!Random-access memory|textit}{17}
+\indexentry {GPIO!General-purpose input/output|textit}{17}
+\indexentry {SPI!Serial Peripheral Interface|textit}{17}
+\indexentry {I2C!Inter-Integrated Circuit|textit}{17}
+\indexentry {USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}{17}
