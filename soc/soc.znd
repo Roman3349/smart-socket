@@ -3,8 +3,8 @@
   \item AES
     \subitem Advanced Encryption Standard, \textit{12}
   \item ARM
-    \subitem Acorn RISC Machine, \textit{17}
-    \subitem Advanced RISC Machine, \textit{17}
+    \subitem Acorn RISC Machine, \textit{18}
+    \subitem Advanced RISC Machine, \textit{18}
 
   \indexspace
 
@@ -16,7 +16,7 @@
   \indexspace
 
   \item GPIO
-    \subitem General-purpose input/output, \textit{17}
+    \subitem General-purpose input/output, \textit{18}
   \item GSM
     \subitem Global System for Mobile Communications, \textit{16}
   \item GSMK
@@ -25,7 +25,7 @@
   \indexspace
 
   \item I2C
-    \subitem Inter-Integrated Circuit, \textit{17}
+    \subitem Inter-Integrated Circuit, \textit{18}
 
   \indexspace
 
@@ -54,7 +54,7 @@
   \indexspace
 
   \item RAM
-    \subitem Random-access memory, \textit{17}
+    \subitem Random-access memory, \textit{18}
 
   \indexspace
 
@@ -63,13 +63,13 @@
   \item SMD
     \subitem Surface-mounted device, \textit{10}
   \item SPI
-    \subitem Serial Peripheral Interface, \textit{16, 17}
+    \subitem Serial Peripheral Interface, \textit{16}, \textit{18}
 
   \indexspace
 
   \item USART
     \subitem Universal Synchronous / Asynchronous Receiver and Transmitter, 
-		\textit{17}
+		\textit{18}
   \item USB
     \subitem Universal Serial Bus, \textit{16}
 

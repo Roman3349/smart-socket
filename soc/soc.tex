@@ -95,11 +95,11 @@ Tato práce byla provedena za finanční podpory Jihomoravského kraje.
 % Loga
 \begin{figure}[!htb]
 \minipage{0.50\textwidth}
-	\includegraphics[width = 64mm]{img/logo-jmk.pdf} \\[8mm]
-	\includegraphics[width = 64mm]{img/logo-jcmm.jpg}
+	\includegraphics[width = 64mm]{img/logo/jmk.pdf} \\[8mm]
+	\includegraphics[width = 64mm]{img/logo/jcmm.jpg}
 \endminipage
 \minipage{0.50\textwidth}
-	\includegraphics[width = 64mm]{img/logo-vut.pdf}
+	\includegraphics[width = 64mm]{img/logo/vut.pdf}
 \endminipage
 \end{figure}
 
@@ -160,7 +160,7 @@ V~chytré zásuvce jsem použil bezdrátový modul IQRF DCTR-72DAT, který rovn�
 \begin{figure}[H]
 \centering
 \label{fig:iqrf/fotka}
-\includegraphics[width = 64mm]{img/iqrf.png}
+\includegraphics[width = 64mm]{img/iqrf/dctr-72dat.png}
 \caption{Fotografie bezdrátového modulu}
 \end{figure}
 
@@ -173,7 +173,7 @@ Modul lze napájet napětím 3,1~V až 5,5~V, protože obsahuje LDO\index[zkr]{L
 \begin{figure}[H]
 \centering
 \label{fig:iqrf/zjednodusene-schema}
-\includegraphics[width = 128mm]{img/iqrf-zjednodusene-schema.png}
+\includegraphics[width = 128mm]{img/iqrf/dctr-72dat-zjednodusene-schema.png}
 \caption{Zjednodušené schéma bezdrátového modulu}
 \end{figure}
 
@@ -268,6 +268,20 @@ Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je v
 
 Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model B. Bezdrátový modul IQRF DCTR-72DAT je k~bráně připojen přes sběrnici SPI\index[zkr]{SPI!Serial Peripheral Interface|textit} pomocí adaptéru IQRF KON-RASP-01. Pro komunikaci s~GSM sítí lze použít USB\index[zkr]{USB!Universal Serial Bus|textit} GSM\index[zkr]{GSM!Global System for Mobile Communications|textit}/3G modem (například Huawei E3131) nebo starší mobilní telefon (například Samsung Star II nebo Samsung Galaxy Gio). Brána se napájí pomocí externího spínaného zdroje s~microUSB konektorem, který má výstupní napětí 5~V a maximální výstupní proud 2~A.
 
+\begin{figure}[H]
+\centering
+\label{fig:iqrf/fotka}
+\includegraphics[width = 64mm]{img/iqrf/kon-rasp-01.png}
+\caption{Fotografie adaptéru IQRF KON-RASP-01}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\label{fig:iqrf/zjednodusene-schema}
+\includegraphics[width = 128mm]{img/iqrf/kon-rasp-01-zjednodusene-schema.png}
+\caption{Zjednodušené schéma adaptéru IQRF KON-RASP-01}
+\end{figure}
+
 \subsubsection{Raspberry Pi 2 model B}
 
 Raspberry Pi 2 model B je jednodeskový počítač, který má rozměry podobné kreditní kartě. Tento počítač obsahuje: 
@@ -312,7 +326,7 @@ IQRF OS je sada funkcí psaná v~programovacím jazyce C, které může uživate
 
 \subsubsection{IQRF DPA}
 
-IQRF DPA je vrstva nad IQRF OS, která se stará o~protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, kterou naleznete v~tabulce. Centrální prvek v~IQRF mesh síti se jmenuje koordinátor, který je umístěn v~bráně. Koordinátor má se své paměti EEPROM uložené informace o~dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v~EEPROM paměti, tak data ignoruje.
+IQRF DPA je vrstva nad IQRF OS, která se stará o~protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, která je uvedena v~tabulce č.~2. Centrální prvek v~IQRF mesh síti se jmenuje koordinátor, který je umístěn v~bráně. Koordinátor má se své paměti EEPROM uložené informace o~dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v~EEPROM paměti, pak data ignoruje.
 
 \subsection{Brána}
 
