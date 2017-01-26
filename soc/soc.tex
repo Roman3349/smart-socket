@@ -42,7 +42,7 @@
 \end{tabbing}
 
 \newpage
-% Vynechání číslování
+% Zakázání číslování
 \pagestyle{empty}
 % Zvětšení oblasti tisku pro tuto stránku
 \enlargethispage{60mm}
@@ -107,7 +107,7 @@ Tato práce byla provedena za finanční podpory Jihomoravského kraje.
 
 \section*{Anotace}
 
-Cílem této práce je navrhnout a sestavit chytrou zásuvku, která se ovládá pomocí pomocí SMS a která může spínat odporovou zátěž až 10~A. Součástí mé práce je technická dokumentace výrobku, popis postupu  výroby a samotný výrobek.
+Cílem této práce je navrhnout a sestavit chytrou zásuvku, která se ovládá pomocí pomocí SMS a která může spínat odporovou zátěž až 10~A. Součástí mé práce je technická dokumentace výrobku, popis postupu výroby a samotný výrobek.
 
 \subsection*{Klíčová slova}
 
@@ -123,9 +123,15 @@ GSM; text message; IQRF; relay
 
 \newpage
 
+% Nastavení číslování od Obsahu
+\setcounter{page}{1}
+
 \tableofcontents
 
 \newpage
+
+% Povolení číslování
+\pagestyle{plain}
 
 \section*{Úvod}
 
@@ -289,15 +295,21 @@ Raspberry Pi 2 model B je jednodeskový počítač, který má rozměry podobné
 \begin{itemize}
 	% Řádkování 1,5
 	\renewcommand{\baselinestretch}{1.5}
-	\item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836, který pracuje na frekvenci 900~MHz,
+	\item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836,
 	\item 1~GB operační paměti RAM\index[zkr]{RAM!Random-access memory|textit},
 	\item čtyři USB 2.0 porty
 	\item Ethernet port pro 100~Mb síťovou kartu,
 	\item microSD slot,
 	\item HDMI výstup,
-	\item 40 GPIO\index[zkr]{GPIO!General-purpose input/output|textit} pinů,
-	\item sběrnice SPI\index[zkr]{SPI!Serial Peripheral Interface|textit}, I2C\index[zkr]{I2C!Inter-Integrated Circuit|textit}, USART\index[zkr]{USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}.
+	\item 40 GPIO\index[zkr]{GPIO!General-purpose input/output|textit} pinů, na kterých jsou vyvedeny sběrnice SPI\index[zkr]{SPI!Serial Peripheral Interface|textit}, I2C\index[zkr]{I2C!Inter-Integrated Circuit|textit}, USART\index[zkr]{USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}.
 \end{itemize}
+
+\begin{figure}[H]
+\centering
+\label{fig:foto/rpi2}
+\includegraphics[width = 128mm]{img/foto-rpi2.jpg}
+\caption{Fotografie jednodeskového počítače Raspberry Pi 2 model B}
+\end{figure}
 
 \newpage
 
@@ -445,7 +457,14 @@ Software, který běží v~bráně jsem psal v~vývojovém prostředí Atom IDE,
 
 \addcontentsline{toc}{section}{Závěr}
 
-Výsledkem této práce je funkční chytrá zásuvka, která splňuje veškeré požadavky.
+Navržený systém dálkového ovládání elektrických spotřebičů byl navržen a realizován ve formě funkčního vzorku. Na obrázcích č. 11 a 12 jsou fotografie funkčního vzorku chytré zásuvky a brány. Funkce chytré zásuvky i celého systému jejího dálkového ovládání pomocí GSM komunikace z~mobilního telefonu vzdáleného uživatele byla ověřena a shledána plně funkční. Výsledkem tohoto projektu je tedy plně funkční chytrá zásuvka, která nejenže splňuje všechny požadavky zadání, ale v mnoha směrech je i rozšiřuje – například o~zpětný přenos SMS informací vzdálenému uživateli o~okamžitém stavu sepnutí/vypnutí zásuvky. Vzhledem k~charakteru a univerzalitě řešení by systém v~budoucnosti mohl umožnit i zpětný přenos dalších SMS informací (např. teplota v~objektu).
+
+\begin{figure}[H]
+\centering
+\label{fig:foto/brana}
+\includegraphics[width = 128mm]{img/foto-brana.jpg}
+\caption{Fotografie funkčního vzorku brány}
+\end{figure}
 
 \newpage
 
@@ -510,4 +529,4 @@ KiCad EDA \emph{KiCad EDA} [online]. [cit. 2017-01-19]. \\ Dostupné z: \url{htt
 
 \addcontentsline{toc}{section}{Seznam tabulek}
 
-\end{document}
+\end{document}  

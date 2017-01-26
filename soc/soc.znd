@@ -1,81 +1,81 @@
 \begin{theindex}
 
   \item AES
-    \subitem Advanced Encryption Standard, \textit{12}
+    \subitem Advanced Encryption Standard, \textit{7}
   \item ARM
-    \subitem Acorn RISC Machine, \textit{18}
-    \subitem Advanced RISC Machine, \textit{18}
+    \subitem Acorn RISC Machine, \textit{13}
+    \subitem Advanced RISC Machine, \textit{13}
 
   \indexspace
 
   \item DPA
-    \subitem Direct Peripheral Access, \textit{12}
+    \subitem Direct Peripheral Access, \textit{7}
   \item DPS
-    \subitem Deska plošných spojů, \textit{16}
+    \subitem Deska plošných spojů, \textit{11}
 
   \indexspace
 
   \item GPIO
-    \subitem General-purpose input/output, \textit{18}
+    \subitem General-purpose input/output, \textit{13}
   \item GSM
-    \subitem Global System for Mobile Communications, \textit{16}
+    \subitem Global System for Mobile Communications, \textit{11}
   \item GSMK
-    \subitem Gaussian minimum shift keying, \textit{11}
+    \subitem Gaussian minimum shift keying, \textit{6}
 
   \indexspace
 
   \item I2C
-    \subitem Inter-Integrated Circuit, \textit{18}
+    \subitem Inter-Integrated Circuit, \textit{13}
 
   \indexspace
 
   \item LAN
-    \subitem Local area network, \textit{8}
+    \subitem Local area network, \textit{3}
   \item LDO
-    \subitem Low-dropout, \textit{11}
+    \subitem Low-dropout, \textit{6}
 
   \indexspace
 
   \item MOV
-    \subitem Metal Oxide Varistor, \textit{10}
+    \subitem Metal Oxide Varistor, \textit{5}
 
   \indexspace
 
   \item N-MOSFET
     \subitem N-Channel metal–oxide–semiconductor field-effect transistor, 
-		\textit{10}
+		\textit{5}
 
   \indexspace
 
   \item OS
-    \subitem Operating system, \textit{12}
-    \subitem Operační systém, \textit{12}
+    \subitem Operating system, \textit{7}
+    \subitem Operační systém, \textit{7}
 
   \indexspace
 
   \item RAM
-    \subitem Random-access memory, \textit{18}
+    \subitem Random-access memory, \textit{13}
 
   \indexspace
 
   \item SIM
-    \subitem Subscriber identity module, \textit{11}
+    \subitem Subscriber identity module, \textit{6}
   \item SMD
-    \subitem Surface-mounted device, \textit{10}
+    \subitem Surface-mounted device, \textit{5}
   \item SPI
-    \subitem Serial Peripheral Interface, \textit{16}, \textit{18}
+    \subitem Serial Peripheral Interface, \textit{11}, \textit{13}
 
   \indexspace
 
   \item USART
     \subitem Universal Synchronous / Asynchronous Receiver and Transmitter, 
-		\textit{18}
+		\textit{13}
   \item USB
-    \subitem Universal Serial Bus, \textit{16}
+    \subitem Universal Serial Bus, \textit{11}
 
   \indexspace
 
   \item XTEA
-    \subitem eXtended Tiny Encryption Algorithm, \textit{12}
+    \subitem eXtended Tiny Encryption Algorithm, \textit{7}
 
 \end{theindex}
