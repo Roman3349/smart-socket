@@ -293,8 +293,6 @@ Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model 
 Raspberry Pi 2 model B je jednodeskový počítač, který má rozměry podobné kreditní kartě. Tento počítač obsahuje: 
 
 \begin{itemize}
-	% Řádkování 1,5
-	\renewcommand{\baselinestretch}{1.5}
 	\item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836,
 	\item 1~GB operační paměti RAM\index[zkr]{RAM!Random-access memory|textit},
 	\item čtyři USB 2.0 porty
@@ -330,21 +328,42 @@ Na obrázku č.~7 se nachází blokové schéma brány, které popisuje její za
 
 \subsection{Chytrá zásuvka}
 
-Software chytré zásuvky je psán v~programovacím jazyce C. Pro práci s~periferiemi bezdrátového modulu je použita sada funkcí IQRF OS. 
+Software chytré zásuvky je psán v~programovacím jazyce C. Software byl napsán ve vývojovém prostředím IQRF IDE\cite{iqrf-ide}.
 
-\subsubsection{IQRF OS}
+\subsubsection{Operační systém IQRF OS}
 
-IQRF OS je sada funkcí psaná v~programovacím jazyce C, které může uživatel ze svého programu volat pomocí hlavičkových souborů IQRF-functions.h, IQRF-macros.h, IQRF-memory.h a template-basic.h. Tyto funkce řídí komunikaci s~integrovaným obvodem, který se stará o~rádiovou komunikaci, o~komunikaci v~mesh síti, o~komunikaci přes sběrnici SPI, o~práci s~pamětmi RAM, EEPROM, o~čtení hodnot z~integrovaného teplotního senzoru, o~čtení hodnot z~analogově digitálního převodníku, o~generování PWM výstupu, o~inicializaci vstupních a výstupních vývodů mikrokontroléru, o~čtení hodnot z~vstupních vývodů mikrokontroléru, o~spínání výstupních pinů mikrokontroléru a o~správu LED diod, které jsou integrovány v~bezdrátovém modulu. 
+IQRF OS\cite{iqrf-os} je operační systém určený pro bezdrátové moduly IQRF, pomocí kterého může uživatel jednoduše:
 
-\subsubsection{IQRF DPA}
+\begin{itemize}
+	\item ovládat rádiovou komunikaci,
+	\item ovládat komunikaci v~mesh síti,
+	\item komunikovat s~periferiemi přes sběrnice SPI, U(S)ART, I2C,
+	\item pracovat s pamětmi RAM, EEPROM,
+	\item inicializovat GPIO,
+	\item spínat GPIO,
+	\item číst logické hodnoty z GPIO,
+	\item spínat integrované LED diody,
+	\item generovat PWM na výstupním pinu,
+	\item číst hodnoty z~analogově digitálního převodníku,
+	\item číst teplotu z~integrovaného teplotního senzoru.
+\end{itemize}
 
-IQRF DPA je vrstva nad IQRF OS, která se stará o~protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, která je uvedena v~tabulce č.~2. Centrální prvek v~IQRF mesh síti se jmenuje koordinátor, který je umístěn v~bráně. Koordinátor má se své paměti EEPROM uložené informace o~dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v~EEPROM paměti, pak data ignoruje.
+\begin{figure}[H]
+\centering
+\label{fig:foto/rpi2}
+\includegraphics[width = 128mm]{img/iqrf/os-blokove-schema.png}
+\caption{Blokové schéma operačního systému IQRF OS}
+\end{figure}
+
+\subsubsection{Protokol IQRF DPA}
+
+IQRF DPA\cite{iqrf-dpa} je vrstva nad IQRF OS, která se stará o~protokol komunikace IQRF bezdrátových modulů. IQRF DPA má pevně danou strukturu paketů, která je uvedena v~tabulce č.~2. Centrální prvek v~IQRF mesh síti se jmenuje koordinátor, který je umístěn v~bráně. Koordinátor má se své paměti EEPROM uložené informace o~dalších bezdrátových modulech, se kterými má komunikovat. Pokud koordinátor přijme data od bezdrátového modulu, jehož informace nemá uložené v~EEPROM paměti, pak data ignoruje.
 
 \subsection{Brána}
 
 V~bráně běží linuxová distribuce Raspbian, což je speciálně upravená linuxová distribuce pro jednodeskový počítač Raspberry Pi. Tato linuxová distribuce je odvozená od linuxové distribuce Debian, která je jedna z~nejpoužívanějších linuxových distribucích. Software brány je psán v~skriptovacím jazyce Python. Abych si byl jistý, že všechny komponenty softwaru brány fungují, tak jsem pomocí nástroje unittest psal unit testy, které testují důležité komponenty (například čtení konfiguračního souboru). \\
 
-Konfigurační soubor softwaru brány je psán v~datovém formátu JSON. A níže naleznete ukázkový konfigurační soubor.
+Konfigurační soubor softwaru brány je psán v~datovém formátu YAML. A níže naleznete ukázkový konfigurační soubor.
 
 \subsubsection{AT příkazy}
 
