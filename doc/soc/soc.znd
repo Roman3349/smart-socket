@@ -1,0 +1,110 @@
+\begin{theindex}
+
+  \item AES
+    \subitem Advanced Encryption Standard, \textit{7}
+  \item ARM
+    \subitem Acorn RISC Machine, \textit{13}
+    \subitem Advanced RISC Machine, \textit{13}
+
+  \indexspace
+
+  \item DPA
+    \subitem Direct Peripheral Access, \textit{7}
+  \item DPS
+    \subitem Deska plošných spojů, \textit{11}
+
+  \indexspace
+
+  \item EEPROM
+    \subitem Electrically Erasable Programmable Read-Only Memory, 
+		\textit{16}
+
+  \indexspace
+
+  \item GPIO
+    \subitem General-purpose input/output, \textit{13}
+  \item GSM
+    \subitem Global System for Mobile Communications, \textit{11}
+  \item GSMK
+    \subitem Gaussian minimum shift keying, \textit{6}
+
+  \indexspace
+
+  \item HDMI
+    \subitem High-Definition Multimedia Interface, \textit{13}
+
+  \indexspace
+
+  \item I2C
+    \subitem Inter-Integrated Circuit, \textit{13}
+  \item IDE
+    \subitem Integrated Development Environment, \textit{15}
+  \item IoT
+    \subitem Internet of things, \textit{3}
+
+  \indexspace
+
+  \item LAN
+    \subitem Local area network, \textit{3}
+  \item LDO
+    \subitem Low-dropout, \textit{6}
+  \item LED
+    \subitem Light-Emitting Diode, \textit{16}
+
+  \indexspace
+
+  \item MOV
+    \subitem Metal Oxide Varistor, \textit{5}
+
+  \indexspace
+
+  \item N-MOSFET
+    \subitem N-Channel metal–oxide–semiconductor field-effect transistor, 
+		\textit{5}
+
+  \indexspace
+
+  \item OS
+    \subitem Operating system, \textit{7}
+    \subitem Operační systém, \textit{7}
+
+  \indexspace
+
+  \item PWM
+    \subitem Pulse Width Modulation, \textit{16}
+
+  \indexspace
+
+  \item RAM
+    \subitem Random-access memory, \textit{13}, \textit{16}
+
+  \indexspace
+
+  \item SD
+    \subitem Secure Digital, \textit{13}
+  \item SIM
+    \subitem Subscriber identity module, \textit{6}
+  \item SMD
+    \subitem Surface-mounted device, \textit{5}
+  \item SPI
+    \subitem Serial Peripheral Interface, \textit{11}, \textit{13}
+
+  \indexspace
+
+  \item USART
+    \subitem Universal Synchronous / Asynchronous Receiver and Transmitter, 
+		\textit{13}
+  \item USB
+    \subitem Universal Serial Bus, \textit{11}
+
+  \indexspace
+
+  \item XTEA
+    \subitem eXtended Tiny Encryption Algorithm, \textit{7}
+
+  \indexspace
+
+  \item YAML
+    \subitem YAML Ain't Markup Language, \textit{17}
+
+\end{theindex}
