@@ -1,5 +1,5 @@
 /**
- * Copyright (C) 2017 Roman Ondr·Ëek
+ * Copyright (C) 2017 Roman Ondr√°ƒçek
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,9 +54,9 @@ bit CustomDpaHandler() {
             // Called to interpret DPA request for peripherals
             // Peripheral enumeration
             if (IsDpaEnumPeripheralsRequest()) {
-                _DpaMessage.EnumPeripheralsAnswer.UserPerNr = 1; 
-                _DpaMessage.EnumPeripheralsAnswer.HWPID = HW_PID; 
-                _DpaMessage.EnumPeripheralsAnswer.HWPIDver = HW_PID_VER; 
+                _DpaMessage.EnumPeripheralsAnswer.UserPerNr = 1;
+                _DpaMessage.EnumPeripheralsAnswer.HWPID = HW_PID;
+                _DpaMessage.EnumPeripheralsAnswer.HWPIDver = HW_PID_VER;
             } else if (IsDpaPeripheralInfoRequest()) { // Get information about peripheral
                 if (_PNUM == PNUM_USER + 0) {
                     _DpaMessage.PeripheralInfoAnswer.PerT = PERIPHERAL_TYPE_USER_AREA;
@@ -99,5 +99,5 @@ bit CustomDpaHandler() {
     }
 
 }
-// Default Custom DPA Handler header; 2nd include to implement Code bumper to detect too long code of the Custom DPA Handler (modify the path according to your setup) 
+// Default Custom DPA Handler header; 2nd include to implement Code bumper to detect too long code of the Custom DPA Handler (modify the path according to your setup)
 #include "include/DPAcustomHandler.h"
