@@ -99,11 +99,11 @@ Tato práce byla provedena za finanční podpory Jihomoravského kraje.
 % Loga
 \begin{figure}[!htb]
 \minipage{0.50\textwidth}
-	\includegraphics[width = 64mm]{img/logo/jmk.pdf} \\[8mm]
-	\includegraphics[width = 64mm]{img/logo/jcmm.jpg}
+  \includegraphics[width = 64mm]{img/logo/jmk.pdf} \\[8mm]
+  \includegraphics[width = 64mm]{img/logo/jcmm.jpg}
 \endminipage
 \minipage{0.50\textwidth}
-	\includegraphics[width = 64mm]{img/logo/vut.pdf}
+  \includegraphics[width = 64mm]{img/logo/vut.pdf}
 \endminipage
 \end{figure}
 
@@ -240,40 +240,40 @@ Na obrázku č.~4 se nachází obvodové schéma chytré zásuvky. Obrázek je v
 \subsubsection{Rozpiska součástek}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		\textbf{Značka} & \textbf{Jméno součástky} \\
-		\hline
-		\hline
-		~ & Krabička COMBIPLAST CP-Z-27/B \\
-		\hline
-		C1 & Keramický SMD 1206 kondenzátor 100~nF \\
-		\hline
-		D1, D2 & Dioda 1N4007 \\
-		\hline
-		F1 & Tavná keramická pojistka 10~A 250~VAC \\
-		\hline
-		IC1 & Bezdrátový modul IQRF DCTR-72DAT \\
-		\hline
-		~ & Konektoru IQRF KON-SIM-01 pro IC1 \\
-		\hline
-		J1, J2 & Svorkovnice do DPS\index[zkr]{DPS!Deska plošných spojů|textit} DEGSON DG300-7.5-02P \\
-		\hline
-		Q1, Q2 & N-MOSFET BSS138 \\
-		\hline
-		R1, R2 & Rezistor SMD 1206 10~k$\Omega$ \\
-		\hline
-		RL1, RL2 & Relé OMRON G5Q-1A4-EU 5VDC \\
-		\hline
-		RV1, RV2 & MOV varistor SR PASSIVES VAR10-250 \\
-		\hline
-		D3, SW1 & Mikrospínač HIGHLY PB6141FL-13 \\
-		\hline
-		U1 & Spínaný zdroj MEAN WELL IRM-02-5 \\
-		\hline
-	\end{tabular}
-	\caption{Rozpiska součástek chytré zásuvky}\label{table:rozpiska-soucastek}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Značka} & \textbf{Jméno součástky} \\
+    \hline
+    \hline
+    ~ & Krabička COMBIPLAST CP-Z-27/B \\
+    \hline
+    C1 & Keramický SMD 1206 kondenzátor 100~nF \\
+    \hline
+    D1, D2 & Dioda 1N4007 \\
+    \hline
+    F1 & Tavná keramická pojistka 10~A 250~VAC \\
+    \hline
+    IC1 & Bezdrátový modul IQRF DCTR-72DAT \\
+    \hline
+    ~ & Konektoru IQRF KON-SIM-01 pro IC1 \\
+    \hline
+    J1, J2 & Svorkovnice do DPS\index[zkr]{DPS!Deska plošných spojů|textit} DEGSON DG300-7.5-02P \\
+    \hline
+    Q1, Q2 & N-MOSFET BSS138 \\
+    \hline
+    R1, R2 & Rezistor SMD 1206 10~k$\Omega$ \\
+    \hline
+    RL1, RL2 & Relé OMRON G5Q-1A4-EU 5VDC \\
+    \hline
+    RV1, RV2 & MOV varistor SR PASSIVES VAR10-250 \\
+    \hline
+    D3, SW1 & Mikrospínač HIGHLY PB6141FL-13 \\
+    \hline
+    U1 & Spínaný zdroj MEAN WELL IRM-02-5 \\
+    \hline
+  \end{tabular}
+  \caption{Rozpiska součástek chytré zásuvky}\label{table:rozpiska-soucastek}
 \end{table}
 
 \newpage
@@ -301,13 +301,13 @@ Pro bránu jsem použil linuxový jednodeskový počítač Raspberry Pi 2 model 
 Raspberry Pi 2 model B je jednodeskový počítač, který má rozměry podobné kreditní kartě. Tento počítač obsahuje:
 
 \begin{itemize}
-	\item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836,
-	\item 1~GB operační paměti RAM\index[zkr]{RAM!Random-access memory|textit},
-	\item čtyři USB 2.0 porty
-	\item port RJ45 pro 100~Mb síťovou kartu,
-	\item slot pro microSD\index[zkr]{SD!Secure Digital|textit} kartu,
-	\item HDMI\index[zkr]{HDMI!High-Definition Multimedia Interface|textit} výstup,
-	\item 40 GPIO\index[zkr]{GPIO!General-purpose input/output|textit} pinů, na kterých jsou vyvedeny sběrnice SPI\index[zkr]{SPI!Serial Peripheral Interface|textit}, I2C\index[zkr]{I2C!Inter-Integrated Circuit|textit}, USART\index[zkr]{USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}.
+  \item čtyřjádrový ARM\index[zkr]{ARM!Acorn RISC Machine|textit}\index[zkr]{ARM!Advanced RISC Machine|textit} Cortex-A7 Broadcom BCM2836,
+  \item 1~GB operační paměti RAM\index[zkr]{RAM!Random-access memory|textit},
+  \item čtyři USB 2.0 porty
+  \item port RJ45 pro 100~Mb síťovou kartu,
+  \item slot pro microSD\index[zkr]{SD!Secure Digital|textit} kartu,
+  \item HDMI\index[zkr]{HDMI!High-Definition Multimedia Interface|textit} výstup,
+  \item 40 GPIO\index[zkr]{GPIO!General-purpose input/output|textit} pinů, na kterých jsou vyvedeny sběrnice SPI\index[zkr]{SPI!Serial Peripheral Interface|textit}, I2C\index[zkr]{I2C!Inter-Integrated Circuit|textit}, USART\index[zkr]{USART!Universal Synchronous / Asynchronous Receiver and Transmitter|textit}.
 \end{itemize}
 
 \begin{figure}[H]
@@ -333,26 +333,26 @@ Na obrázku č.~7 se nachází blokové schéma brány, které popisuje její za
 \subsubsection{Rozpiska součástek}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		%\textbf{Značka} &
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    %\textbf{Značka} &
     \textbf{Jméno součástky} \\
-		\hline
-		\hline
-		%~ &
+    \hline
+    \hline
+    %~ &
     Raspberry Pi 2 model B \\
-		\hline
-		%~ &
+    \hline
+    %~ &
     adaptér IQRF KON-RASP-01 \\
-		\hline
-		%~ &
+    \hline
+    %~ &
     bezdrátový modul IQRF DCTR-72DAT \\
-		\hline
-		%~ & ~ \\
-		%\hline
-	\end{tabular}
-	\caption{Rozpiska součástek brány}\label{table:rozpiska-soucastek/brana}
+    \hline
+    %~ & ~ \\
+    %\hline
+  \end{tabular}
+  \caption{Rozpiska součástek brány}\label{table:rozpiska-soucastek/brana}
 \end{table}
 
 \newpage
@@ -394,17 +394,17 @@ IQRF IDE\cite{iqrf/ide} je zdarma stažitelné vývojové prostředí, které je
 IQRF OS\cite{iqrf/os} je operační systém určený pro bezdrátové moduly IQRF, pomocí kterého může uživatel jednoduše:
 
 \begin{itemize}
-	\item ovládat rádiovou komunikaci,
-	\item ovládat komunikaci v~mesh síti,
-	\item komunikovat s~periferiemi přes sběrnice SPI, USART, I2C,
-	\item pracovat s~pamětmi RAM\index[zkr]{RAM!Random-access memory|textit}, EEPROM\index[zkr]{EEPROM!Electrically Erasable Programmable Read-Only Memory|textit},
-	\item inicializovat GPIO,
-	\item spínat GPIO,
-	\item číst logické hodnoty z~GPIO,
-	\item spínat integrované LED\index[zkr]{LED!Light-Emitting Diode|textit} diody,
-	\item generovat PWM\index[zkr]{PWM!Pulse Width Modulation|textit} na výstupním pinu,
-	\item číst hodnoty z~analogově digitálního převodníku,
-	\item číst teplotu z~integrovaného teplotního senzoru.
+  \item ovládat rádiovou komunikaci,
+  \item ovládat komunikaci v~mesh síti,
+  \item komunikovat s~periferiemi přes sběrnice SPI, USART, I2C,
+  \item pracovat s~pamětmi RAM\index[zkr]{RAM!Random-access memory|textit}, EEPROM\index[zkr]{EEPROM!Electrically Erasable Programmable Read-Only Memory|textit},
+  \item inicializovat GPIO,
+  \item spínat GPIO,
+  \item číst logické hodnoty z~GPIO,
+  \item spínat integrované LED\index[zkr]{LED!Light-Emitting Diode|textit} diody,
+  \item generovat PWM\index[zkr]{PWM!Pulse Width Modulation|textit} na výstupním pinu,
+  \item číst hodnoty z~analogově digitálního převodníku,
+  \item číst teplotu z~integrovaného teplotního senzoru.
 \end{itemize}
 
 \begin{figure}[H]
@@ -479,32 +479,32 @@ Pomocí příkazu \textit{AT+CMGS="telefonní číslo příjemce" \\ Text <26>\f
 Pomocí příkazu \textit{ATD+420123456789;} se \uv{vytočí} telefonní číslo +420123456789. Následně je pomocí příkazu \textit{AT+CHUP} ukončeno spojení.
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{|l|l|}
-		\hline
-		\textbf{Příkaz} & \textbf{Popis} \\
-		\hline
-		\hline
-		AT & Základní AT příkaz \\
-		\hline
-		ATI & Vypíše informace o~modemu \\
-		\hline
-		AT+CPIN=1234 & Odemkne SIM kartu pomocí PINu 1234 \\
-		\hline
-		AT+CPIN? & Odpoví, jestliže je PIN v~pořádku \\
-		\hline
-		AT+CMGF=1 & Nastavení textového ASCII přenosus dat \\
-		\hline
-		AT+CMGL=”ALL” & Přečte všechny SMS zprávy \\
-		\hline
-		AT+CMGS="telefonní číslo příjemce" & Odeslání SMS zprávy \\
-		\hline
-		ATD+420123456789; & Vytočí číslo +420123456789 \\
-		\hline
-		AT+CHUP & Zavěšení hovoru (spojení) \\
-		\hline
-	\end{tabular}
-	\caption{Seznam použitých AT příkazů}\label{table:at-prikazy}
+  \centering
+  \begin{tabular}{|l|l|}
+    \hline
+    \textbf{Příkaz} & \textbf{Popis} \\
+    \hline
+    \hline
+    AT & Základní AT příkaz \\
+    \hline
+    ATI & Vypíše informace o~modemu \\
+    \hline
+    AT+CPIN=1234 & Odemkne SIM kartu pomocí PINu 1234 \\
+    \hline
+    AT+CPIN? & Odpoví, jestliže je PIN v~pořádku \\
+    \hline
+    AT+CMGF=1 & Nastavení textového ASCII přenosus dat \\
+    \hline
+    AT+CMGL=”ALL” & Přečte všechny SMS zprávy \\
+    \hline
+    AT+CMGS="telefonní číslo příjemce" & Odeslání SMS zprávy \\
+    \hline
+    ATD+420123456789; & Vytočí číslo +420123456789 \\
+    \hline
+    AT+CHUP & Zavěšení hovoru (spojení) \\
+    \hline
+  \end{tabular}
+  \caption{Seznam použitých AT příkazů}\label{table:at-prikazy}
 \end{table}
 
 \newpage
@@ -514,50 +514,50 @@ Pomocí příkazu \textit{ATD+420123456789;} se \uv{vytočí} telefonní číslo
 \subsection{Chytrá zásuvka}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{lr}
-		\hline
-		\textbf{Technické parametry} & ~ \\
-		\hline
-		\hline
-		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\
-		\textbf{Hmotnost} & x~g \\
-		\hline
-		\textbf{Elektrické parametry} \\
-		\hline
-		\hline
-		\textbf{Napájecí napětí} & 90~V až 250~V AC\index[zkr]{AC!Alternating current|textit} \\
-		\textbf{Maximální odběr proudu} & 400~mA \\
-		\textbf{Maximální spínatelný proud} & 10~A \\
-		\hline
-		\textbf{Ostatní parametry} \\
-		\hline
-		\hline
-		\textbf{Přenos dat} & bezdrátově na frekvenci 868~MHz \\
-		\textbf{Protokol} & IQRF DPA \\
-	\end{tabular}
-	\caption{Parametry chytré zásuvky}\label{table:parametry/chytra-zasuvka}
+  \centering
+  \begin{tabular}{lr}
+    \hline
+    \textbf{Technické parametry} & ~ \\
+    \hline
+    \hline
+    \textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\
+    \textbf{Hmotnost} & x~g \\
+    \hline
+    \textbf{Elektrické parametry} \\
+    \hline
+    \hline
+    \textbf{Napájecí napětí} & 90~V až 250~V AC\index[zkr]{AC!Alternating current|textit} \\
+    \textbf{Maximální odběr proudu} & 400~mA \\
+    \textbf{Maximální spínatelný proud} & 10~A \\
+    \hline
+    \textbf{Ostatní parametry} \\
+    \hline
+    \hline
+    \textbf{Přenos dat} & bezdrátově na frekvenci 868~MHz \\
+    \textbf{Protokol} & IQRF DPA \\
+  \end{tabular}
+  \caption{Parametry chytré zásuvky}\label{table:parametry/chytra-zasuvka}
 \end{table}
 
 \subsection{Brána}
 
 \begin{table}[H]
-	\centering
-	\begin{tabular}{lr}
-		\hline
-		\textbf{Technické parametry} & ~ \\
-		\hline
-		\hline
-		\textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\
-		\textbf{Hmotnost} & x~g \\
-		\hline
-		\textbf{Elektrické parametry} \\
-		\hline
-		\hline
-		\textbf{Napájecí napětí} & 5~V DC\index[zkr]{DC!Direct current|textit} \\
-		\textbf{Maximální odběr proudu} & 2~A \\
-	\end{tabular}
-	\caption{Parametry brány}\label{table:parametry/zbrana}
+  \centering
+  \begin{tabular}{lr}
+    \hline
+    \textbf{Technické parametry} & ~ \\
+    \hline
+    \hline
+    \textbf{Rozměry} & 7$\times$12$\times$4,5~cm \\
+    \textbf{Hmotnost} & x~g \\
+    \hline
+    \textbf{Elektrické parametry} \\
+    \hline
+    \hline
+    \textbf{Napájecí napětí} & 5~V DC\index[zkr]{DC!Direct current|textit} \\
+    \textbf{Maximální odběr proudu} & 2~A \\
+  \end{tabular}
+  \caption{Parametry brány}\label{table:parametry/zbrana}
 \end{table}
 
 \newpage
