@@ -441,24 +441,23 @@ V~bráně běží linuxová distribuce Raspbian, což je speciálně upravená l
 Konfigurační soubor softwaru brány je psán v~datovém formátu YAML\index[zkr]{YAML!YAML Ain't Markup Language|textit}. V~dalším odstavci je uveden ukázkový konfigurační soubor.
 
 \begin{lstlisting}[language=yaml, numbers=left]
-gsm:
-  enabled: true
-  interface: uart
-  interfaces:
-    uart:
-      port: "/dev/ttyUSB0"
-      baudRate: 9600
-  pin: false
+  gsm:
+    enabled: true
+    interface: uart
+    interfaces:
+      uart:
+        port: "/dev/ttyUSB0"
+        baudRate: 9600
+    pin: false
 
-iqrf:
-  enabled: true
-  interface: spi
-  interfaces:
-    spi:
-      port: "/dev/spidev0.0"
-    uart:
-      port: "/dev/ttyACM0"
-baudRate: 9600
+  iqrf:
+    enabled: true
+    interface: spi
+    interfaces:
+      spi:
+        port: "/dev/spidev0.0"
+      cdc:
+        port: "/dev/ttyACM0"
 \end{lstlisting}
 
 \newpage
